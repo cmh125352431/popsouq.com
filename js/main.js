@@ -65,6 +65,14 @@ if (langSwitch && !langSwitch.hasAttribute('onchange')) {
     });
 }
 
+// Mobile language switch dropdown
+const langSwitchMobile = document.querySelector('#langSelectMobile');
+if (langSwitchMobile) {
+    langSwitchMobile.addEventListener('change', function() {
+        switchLang(this.value);
+    });
+}
+
 // Next banner
 function nextBanner() {
     const nextIndex = (currentIndex + 1) % bannerItems.length;

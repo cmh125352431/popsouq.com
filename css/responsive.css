@@ -50,8 +50,31 @@
         display: none;
     }
 
+    /* Hide mobile language switch on desktop */
+    .lang-mobile-item {
+        display: none;
+    }
+
     .mobile-menu-btn {
         display: flex;
+    }
+
+    /* Mobile language switch */
+    .lang-mobile-item {
+        display: block;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .lang-select-mobile {
+        width: 100%;
+        padding: 10px;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.3);
+        border-radius: 3px;
+        color: #fff;
+        font-size: 14px;
     }
 
     .banner {
