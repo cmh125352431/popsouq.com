@@ -22,6 +22,49 @@ function showBanner(index) {
     currentIndex = index;
 }
 
+// ===== Language Switch =====
+// Global function for dedicated onchange handlers
+function switchLang(lang) {
+    const currentPath = window.location.pathname;
+    const fullPath = currentPath.split('/');
+    const fileName = fullPath.pop() || 'index.html';
+    const folderPath = currentPath.split(fileName)[0];
+    
+    let targetFile;
+    
+    if (lang === 'en') {
+        // Switch to English version - add -en before .html
+        if (fileName === 'index.html') {
+            targetFile = 'index-en.html';
+        } else if (fileName.includes('-en.html')) {
+            // Already English
+            targetFile = fileName;
+        } else {
+            targetFile = fileName.replace('.html', '-en.html');
+        }
+    } else {
+        // Switch to Chinese version - remove -en from filename
+        if (fileName === 'index-en.html') {
+            targetFile = 'index.html';
+        } else if (fileName.includes('-en.html')) {
+            targetFile = fileName.replace('-en.html', '.html');
+        } else {
+            // Already Chinese
+            targetFile = fileName;
+        }
+    }
+    
+    window.location.href = folderPath + targetFile;
+}
+
+// Event listener for dropdown (fallback)
+const langSwitch = document.querySelector('.lang-switch select');
+if (langSwitch && !langSwitch.hasAttribute('onchange')) {
+    langSwitch.addEventListener('change', function() {
+        switchLang(this.value);
+    });
+}
+
 // Next banner
 function nextBanner() {
     const nextIndex = (currentIndex + 1) % bannerItems.length;
