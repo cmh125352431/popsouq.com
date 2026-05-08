@@ -50,12 +50,22 @@
         display: none;
     }
 
+    /* Mobile always visible language switch - hide on desktop */
+    .mobile-lang-always {
+        display: none;
+    }
+
     /* Hide mobile language switch on desktop */
     .lang-mobile-item {
         display: none;
     }
 
     .mobile-menu-btn {
+        display: flex;
+    }
+
+    /* Mobile always visible language switch */
+    .mobile-lang-always {
         display: flex;
     }
 
