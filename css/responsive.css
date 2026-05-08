@@ -1,0 +1,155 @@
+/* ===== 响应式布局 ===== */
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 95%;
+    }
+
+    .product-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .knowledge-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header .container {
+        height: 60px;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--nav-bg);
+        padding: 20px;
+    }
+
+    .nav.active {
+        display: block;
+    }
+
+    .nav ul {
+        flex-direction: column;
+    }
+
+    .nav ul li {
+        margin: 0;
+    }
+
+    .nav ul li a {
+        padding: 12px 0;
+        display: block;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .banner {
+        height: 300px;
+    }
+
+    .banner-content h2 {
+        font-size: 28px;
+    }
+
+    .banner-content p {
+        font-size: 14px;
+    }
+
+    .welcome .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .product-img {
+        height: 140px;
+    }
+
+    .knowledge-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-about .container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .about-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section-title h2 {
+        font-size: 22px;
+    }
+
+    .welcome-content h2 {
+        font-size: 20px;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    .product-img {
+        height: 160px;
+    }
+
+    .knowledge-list {
+        grid-template-columns: 1fr;
+    }
+
+    .client-list {
+        gap: 15px;
+    }
+
+    .client-item {
+        width: 45%;
+        height: 60px;
+    }
+
+    .banner {
+        height: 250px;
+    }
+
+    .banner-content h2 {
+        font-size: 22px;
+    }
+
+    .banner-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}
