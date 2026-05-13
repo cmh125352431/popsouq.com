@@ -111,17 +111,10 @@ img {
     text-decoration: none;
 }
 
-.logo .logo-text {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
+.logo .logo-img {
     height: 40px;
-    background-color: var(--primary-color);
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    margin-right: 10px;
+    width: auto;
+    display: block;
 }
 
 .logo .logo-full {
@@ -786,16 +779,10 @@ img {
     gap: 10px;
 }
 
-.footer-logo .logo-text {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
+.footer-logo .footer-logo-img {
     height: 40px;
-    background-color: var(--primary-color);
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
+    width: auto;
+    display: block;
 }
 
 .footer-links {
