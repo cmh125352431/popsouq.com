@@ -65,22 +65,6 @@ if (langSwitch && !langSwitch.hasAttribute('onchange')) {
     });
 }
 
-// Mobile language switch dropdown
-const langSwitchMobile = document.querySelector('#langSelectMobile');
-if (langSwitchMobile) {
-    langSwitchMobile.addEventListener('change', function() {
-        switchLang(this.value);
-    });
-}
-
-// Always visible mobile language switch
-const langSwitchAlways = document.querySelector('#langSelectAlways');
-if (langSwitchAlways) {
-    langSwitchAlways.addEventListener('change', function() {
-        switchLang(this.value);
-    });
-}
-
 // Next banner
 function nextBanner() {
     const nextIndex = (currentIndex + 1) % bannerItems.length;
