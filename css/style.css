@@ -160,43 +160,93 @@ img {
     display: inline-block;
 }
 
-.lang-switch select {
-    appearance: none;
+/* ===== Custom Language Dropdown ===== */
+.lang-switch {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-dropdown {
+    position: relative;
+}
+
+.lang-current {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     background: linear-gradient(135deg, #c00 0%, #e60000 100%);
     border: 1px solid #ff3333;
     border-radius: 20px;
     color: #fff;
-    padding: 6px 28px 6px 14px;
+    padding: 6px 14px;
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;
-    outline: none;
     box-shadow: 0 2px 8px rgba(204,0,0,0.3);
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-.lang-switch select:hover {
+.lang-current:hover {
     background: linear-gradient(135deg, #e60000 0%, #ff1a1a 100%);
     border-color: #ff6666;
     box-shadow: 0 4px 12px rgba(204,0,0,0.5);
     transform: translateY(-1px);
 }
 
-.lang-switch select option {
-    background: #c00;
-    color: #fff;
-    padding: 6px 10px;
+.lang-arrow {
+    font-size: 10px;
+    transition: transform 0.3s ease;
 }
 
-.lang-switch::after {
-    content: '▼';
+.lang-dropdown.open .lang-arrow {
+    transform: rotate(180deg);
+}
+
+.lang-menu {
+    display: none;
     position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 10px;
-    color: var(--nav-text);
-    pointer-events: none;
+    top: calc(100% + 6px);
+    right: 0;
+    background: linear-gradient(180deg, #b30000 0%, #c00 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4), 0 0 20px rgba(204,0,0,0.2);
+    min-width: 110px;
+    z-index: 9999;
+    overflow: hidden;
+    animation: langDropIn 0.2s ease;
+}
+
+@keyframes langDropIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.lang-dropdown.open .lang-menu {
+    display: block;
+}
+
+.lang-option {
+    display: block;
+    color: #fff;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.lang-option:last-child {
+    border-bottom: none;
+}
+
+.lang-option:hover,
+.lang-option.active {
+    background: rgba(255,255,255,0.15);
+}
+
+.lang-option.active {
+    font-weight: 600;
 }
 
 .qq-link {
