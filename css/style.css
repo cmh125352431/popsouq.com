@@ -162,18 +162,30 @@ img {
 
 .lang-switch select {
     appearance: none;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 3px;
-    color: var(--nav-text);
-    padding: 5px 25px 5px 10px;
-    font-size: 14px;
+    background: linear-gradient(135deg, #c00 0%, #e60000 100%);
+    border: 1px solid #ff3333;
+    border-radius: 20px;
+    color: #fff;
+    padding: 6px 28px 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
     outline: none;
+    box-shadow: 0 2px 8px rgba(204,0,0,0.3);
+    transition: all 0.3s ease;
 }
 
 .lang-switch select:hover {
-    border-color: var(--primary-color);
+    background: linear-gradient(135deg, #e60000 0%, #ff1a1a 100%);
+    border-color: #ff6666;
+    box-shadow: 0 4px 12px rgba(204,0,0,0.5);
+    transform: translateY(-1px);
+}
+
+.lang-switch select option {
+    background: #2a2a3e;
+    color: #fff;
+    padding: 8px;
 }
 
 .lang-switch::after {
