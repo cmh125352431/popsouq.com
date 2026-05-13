@@ -183,9 +183,9 @@ img {
 }
 
 .lang-switch select option {
-    background: #2a2a3e;
+    background: #c00;
     color: #fff;
-    padding: 8px;
+    padding: 6px 10px;
 }
 
 .lang-switch::after {
