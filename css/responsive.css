@@ -47,61 +47,13 @@
     }
 
     .header-right {
-        display: none;
-    }
-
-    /* Mobile always visible language switch - hide on desktop */
-    .mobile-lang-always {
-        display: none;
-    }
-
-    /* Hide mobile language switch on desktop */
-    .lang-mobile-item {
-        display: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
     }
 
     .mobile-menu-btn {
         display: flex;
-    }
-
-    /* Mobile always visible language switch */
-    .mobile-lang-always {
-        display: flex;
-        align-items: center;
-        margin-left: 10px;
-    }
-
-    .lang-select-always {
-        padding: 5px 8px;
-        background: transparent;
-        border: 1px solid rgba(255,255,255,0.5);
-        border-radius: 3px;
-        color: #fff;
-        font-size: 12px;
-        cursor: pointer;
-    }
-
-    .lang-select-always option {
-        background: #3c404b;
-        color: #fff;
-    }
-
-    /* Mobile language switch */
-    .lang-mobile-item {
-        display: block;
-        margin-top: 10px;
-        padding-top: 10px;
-        border-top: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .lang-select-mobile {
-        width: 100%;
-        padding: 10px;
-        background: transparent;
-        border: 1px solid rgba(255,255,255,0.3);
-        border-radius: 3px;
-        color: #fff;
-        font-size: 14px;
     }
 
     .banner {
