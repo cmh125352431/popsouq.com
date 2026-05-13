@@ -674,20 +674,35 @@ img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
+    align-items: center;
 }
 
 .client-item {
-    width: 150px;
-    height: 80px;
+    width: 140px;
+    height: 70px;
     background-color: var(--bg-white);
     border: 1px solid var(--border-color);
-    border-radius: 5px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #999;
-    font-size: 12px;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.client-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.client-item img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 /* ===== 联系方式 ===== */
