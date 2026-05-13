@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cmh125352431.github.io/popsouq.com/sitemap.xml
