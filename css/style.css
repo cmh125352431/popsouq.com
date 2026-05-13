@@ -696,11 +696,12 @@ img {
 }
 
 .client-item img {
-    max-width: 120px;
-    max-height: 60px;
     width: auto;
     height: auto;
+    max-width: 110px;
+    max-height: 55px;
     object-fit: contain;
+    display: block;
 }
 
 /* ===== 联系方式 ===== */
