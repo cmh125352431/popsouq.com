@@ -810,10 +810,15 @@ img {
 }
 
 /* ===== 新产品卡片网格布局 ===== */
+.products-page {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
 .products-grid-new {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 24px;
     padding: 20px 0;
 }
 
