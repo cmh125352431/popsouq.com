@@ -8,6 +8,184 @@
     <meta name="keywords" content="厦门泓劲,联系方式,面料报价,合作咨询">
     <title>联系我们 | 厦门泓劲贸易有限公司</title>
     <link rel="stylesheet" href="css/style.css?v=2">
+    <style>
+        .contact-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .contact-hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        .contact-hero p {
+            font-size: 16px;
+            color: #c00;
+            letter-spacing: 3px;
+        }
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 600px;
+        }
+        .contact-info-side {
+            background: #1a1a2e;
+            color: white;
+            padding: 60px;
+        }
+        .contact-info-side h2 {
+            font-size: 28px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        .contact-info-side h2 span {
+            color: #c00;
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(204,0,0,0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .info-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: #c00;
+        }
+        .info-content h3 {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .info-content p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .contact-form-side {
+            background: white;
+            padding: 60px;
+        }
+        .contact-form-side h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+        .contact-form-side .subtitle {
+            color: #888;
+            margin-bottom: 40px;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 0;
+            border: none;
+            border-bottom: 2px solid #e0e0e0;
+            font-size: 15px;
+            font-family: inherit;
+            background: transparent;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-bottom-color: #c00;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .submit-btn {
+            background: #c00;
+            color: white;
+            border: none;
+            padding: 16px 50px;
+            font-size: 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            background: #a00;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(204,0,0,0.3);
+        }
+        .map-section {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+        .map-section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #1a1a2e;
+        }
+        .map-container {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .map-placeholder {
+            height: 400px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .map-placeholder svg {
+            width: 60px;
+            height: 60px;
+            fill: #c00;
+            margin-bottom: 20px;
+        }
+        .map-placeholder h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .map-placeholder p {
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .contact-info-side,
+            .contact-form-side {
+                padding: 40px 30px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- 顶部导航栏 -->
@@ -20,7 +198,7 @@
             </div>
             <nav class="nav">
                 <ul>
-<li><a href="index.html">首页</a></li>
+                    <li><a href="index.html">首页</a></li>
                     <li><a href="products.html">产品介绍</a></li>
                     <li><a href="about.html">关于我们</a></li>
                     <li><a href="news.html">新闻动态</a></li>
@@ -30,7 +208,7 @@
             <div class="header-right">
                 <div class="lang-switch"><div class="lang-dropdown" id="langDropdown"><span class="lang-current">中文 <span class="lang-arrow">▼</span></span><div class="lang-menu"><a href="#" data-lang="zh" class="lang-option active">中文</a><a href="#" data-lang="en" class="lang-option">English</a></div></div></div>
                 <a href="https://wa.me/5215510217089" class="whatsapp-link" target="_blank">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 17.52 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8 3.59-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    <img src="images/whatsapp-icon.png" alt="WhatsApp" width="20" height="20">
                     WhatsApp
                 </a>
             </div>
@@ -42,131 +220,106 @@
         </div>
     </header>
 
-    <!-- 页面标题 -->
-    <section class="page-header">
+    <!-- 联系页面头部 -->
+    <section class="contact-hero">
         <div class="container">
             <h1>联系我们</h1>
             <p>CONTACT US</p>
         </div>
     </section>
 
-    <!-- 面包屑导航 -->
-    <div class="breadcrumb">
-        <div class="container">
-            <a href="index.html">首页</a> &gt; <span>联系我们</span>
-        </div>
-    </div>
-
-    <!-- 联系方式 -->
-    <section class="contact-full">
-        <div class="container">
-            <div class="contact-info-grid">
-                <div class="contact-card">
-                    <div class="contact-card-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="#c00">
-                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                        </svg>
+    <!-- 联系主体 -->
+    <section class="contact-main-section">
+        <div class="contact-wrapper">
+            <!-- 左侧信息 -->
+            <div class="contact-info-side">
+                <h2>联系<span>信息</span></h2>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                     </div>
-                    <h3>电话咨询</h3>
-                    <p class="contact-main">(86) 592-5986779</p>
-                    <p class="contact-secondary">移动: 13720877338</p>
+                    <div class="info-content">
+                        <h3>电话</h3>
+                        <p>(86) 592-5986779<br>移动: 13720877338</p>
+                    </div>
                 </div>
 
-                <div class="contact-card">
-                    <div class="contact-card-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="#c00">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                     </div>
-                    <h3>电子邮箱</h3>
-                    <p class="contact-main">qy125100@hungjintrade.com</p>
-                    <p class="contact-secondary">业务咨询、样品索取</p>
+                    <div class="info-content">
+                        <h3>邮箱</h3>
+                        <p>qy125100@hungjintrade.com</p>
+                    </div>
                 </div>
 
-                <div class="contact-card">
-                    <div class="contact-card-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="#c00">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                        </svg>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                     </div>
-                    <h3>公司地址</h3>
-                    <p class="contact-main">厦门市思明区洪莲东二里25号</p>
-                    <p class="contact-secondary">万科金域蓝湾5B栋2401</p>
+                    <div class="info-content">
+                        <h3>地址</h3>
+                        <p>厦门市思明区洪莲东二里25号<br>万科金域蓝湾5B栋2401</p>
+                    </div>
                 </div>
 
-                <div class="contact-card">
-                    <div class="contact-card-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="#c00">
-                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
-                        </svg>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
                     </div>
-                    <h3>营业时间</h3>
-                    <p class="contact-main">周一至周六</p>
-                    <p class="contact-secondary">08:30 - 17:30</p>
+                    <div class="info-content">
+                        <h3>营业时间</h3>
+                        <p>周一至周六 08:30 - 17:30</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- 联系表单 -->
-            <div class="contact-form-section">
-                <div class="section-title">
-                    <h2>在线留言</h2>
-                    <p>SEND US A MESSAGE</p>
-                </div>
-                <form id="contactFormFull" class="contact-form-full" action="https://api.web3forms.com/submit" method="POST">
+            <!-- 右侧表单 -->
+            <div class="contact-form-side">
+                <h2>在线留言</h2>
+                <p class="subtitle">填写下方表单，我们会尽快回复您</p>
+                
+                <form action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                    <input type="hidden" name="subject" value="新咨询来自 popsouq.com 网站">
-                    <input type="hidden" name="redirect" value="https://popsouq.com/contact.html?success=1">
-                    <input type="checkbox" name="botcheck" class="hidden" style="display:none">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">您的姓名 *</label>
-                            <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="company">公司名称</label>
-                            <input type="text" id="company" name="company" placeholder="请输入公司名称">
-                        </div>
+                    <input type="hidden" name="subject" value="新咨询来自 popsouq.com">
+                    
+                    <div class="form-group">
+                        <label>您的姓名 *</label>
+                        <input type="text" name="name" placeholder="请输入姓名" required>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">电子邮箱 *</label>
-                            <input type="email" id="email" name="email" placeholder="请输入您的邮箱" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">联系电话</label>
-                            <input type="tel" id="phone" name="phone" placeholder="请输入您的电话">
-                        </div>
+                    
+                    <div class="form-group">
+                        <label>电子邮箱 *</label>
+                        <input type="email" name="email" placeholder="请输入邮箱" required>
                     </div>
-                    <div class="form-group-full">
-                        <label for="subject">咨询主题</label>
-                        <select id="subject" name="subject">
-                            <option value="">请选择咨询主题</option>
-                            <option value="product">产品咨询</option>
-                            <option value="sample">样品索取</option>
-                            <option value="price">报价请求</option>
-                            <option value="cooperation">商务合作</option>
-                            <option value="other">其他</option>
-                        </select>
+                    
+                    <div class="form-group">
+                        <label>联系电话</label>
+                        <input type="tel" name="phone" placeholder="请输入电话">
                     </div>
-                    <div class="form-group-full">
-                        <label for="message">留言内容 *</label>
-                        <textarea id="message" name="message" rows="6" placeholder="请输入您的留言内容，我们会尽快回复您" required></textarea>
+                    
+                    <div class="form-group">
+                        <label>留言内容 *</label>
+                        <textarea name="message" placeholder="请输入您的留言" required></textarea>
                     </div>
-                    <div class="form-submit">
-                        <button type="submit" class="btn btn-large">提交留言</button>
-                    </div>
+                    
+                    <button type="submit" class="submit-btn">发送留言</button>
                 </form>
             </div>
+        </div>
+    </section>
 
-            <!-- 地图区域 -->
-            <div class="map-section">
-                <div class="section-title">
-                    <h2>公司位置</h2>
-                    <p>LOCATION</p>
-                </div>
+    <!-- 地图区域 -->
+    <section class="map-section">
+        <div class="container">
+            <h2>公司位置</h2>
+            <div class="map-container">
                 <div class="map-placeholder">
-                    <p>厦门市思明区洪莲东二里25号万科金域蓝湾5B栋2401</p>
-                    <p class="map-note">位于厦门岛内核心区域，交通便利</p>
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <h3>厦门市思明区洪莲东二里25号</h3>
+                    <p>万科金域蓝湾5B栋2401 · 位于厦门岛内核心区域</p>
                 </div>
             </div>
         </div>
