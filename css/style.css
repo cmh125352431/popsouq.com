@@ -673,7 +673,13 @@ img {
 /* ===== 联系方式 ===== */
 .contact-section {
     padding: 80px 0;
-    background: #faf5f5;
+    background: #3c404b;
+    color: #ffffff;
+}
+
+.contact-section .section-title h2,
+.contact-section .section-title p {
+    color: #ffffff;
 }
 
 .contact-wrapper {
@@ -741,12 +747,12 @@ img {
 }
 
 .info-item strong {
-    color: var(--text-dark);
+    color: rgba(255,255,255,0.9);
     margin-right: 10px;
 }
 
 .info-item span {
-    color: var(--text-light);
+    color: rgba(255,255,255,0.75);
 }
 
 /* 联系表单 */
@@ -1345,7 +1351,36 @@ img {
 .contact-form h3 {
     font-size: 20px;
     margin-bottom: 25px;
-    color: #1a1a2e;
+    color: #ffffff;
+}
+
+/* 首页联系区域 - 统一白色文字 */
+.contact-section .contact-info,
+.contact-section .contact-form {
+    color: #ffffff;
+}
+
+.contact-section .contact-info h3,
+.contact-section .contact-form h3 {
+    color: #ffffff;
+}
+
+.contact-section .form-group input,
+.contact-section .form-group textarea {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.2);
+    color: #ffffff;
+}
+
+.contact-section .form-group input::placeholder,
+.contact-section .form-group textarea::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.contact-section .btn {
+    background: #c00;
+    color: #ffffff;
+    border: none;
 }
 .contact-item i {
     width: 40px;
