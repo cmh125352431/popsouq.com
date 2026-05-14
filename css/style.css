@@ -691,8 +691,8 @@ img {
 .client-item img {
     width: auto;
     height: auto;
-    max-width: 110px;
-    max-height: 55px;
+    max-width: 100px;
+    max-height: 40px;
     object-fit: contain;
     display: block;
 }
