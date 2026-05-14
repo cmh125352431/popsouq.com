@@ -1,5 +1,5 @@
 // ===== Banner轮播 =====
-const bannerItems = document.querySelectorAll('.banner-slide');
+const bannerItems = document.querySelectorAll('.banner-item');
 const dots = document.querySelectorAll('.banner-dots .dot');
 const prevArrow = document.querySelector('.banner-arrows .prev');
 const nextArrow = document.querySelector('.banner-arrows .next');

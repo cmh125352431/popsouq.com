@@ -304,7 +304,7 @@ img {
     height: 100%;
 }
 
-.banner-slide {
+.banner-item {
     position: absolute;
     top: 0;
     left: 0;
@@ -317,21 +317,11 @@ img {
     transition: opacity 0.8s;
 }
 
-.banner-slide.active {
+.banner-item.active {
     opacity: 1;
 }
 
-.banner-slide img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-.banner-slide .banner-content {
+.banner-item .banner-content {
     text-align: center;
     color: white;
     z-index: 2;
