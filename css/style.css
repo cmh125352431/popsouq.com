@@ -328,6 +328,36 @@ img {
     opacity: 1;
 }
 
+/* 首页 Banner h1 标题覆盖层 */
+.banner-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    z-index: 5;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    pointer-events: none;
+    width: 90%;
+    max-width: 900px;
+}
+
+.banner-overlay h1 {
+    font-size: clamp(22px, 4vw, 42px);
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+    line-height: 1.3;
+}
+
+.banner-overlay p {
+    font-size: clamp(14px, 2vw, 18px);
+    opacity: 0.9;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
 .banner-slide img {
     width: 100%;
     height: 100%;
@@ -662,8 +692,8 @@ img {
 .client-item img {
     width: auto;
     height: auto;
-    max-width: 100%;
-    max-height: 80px;
+    max-width: 120px;
+    max-height: 60px;
     object-fit: contain;
     display: block;
 }
@@ -744,12 +774,22 @@ img {
     line-height: 1.5;
 }
 
+/* info-item 默认深色文字（用于 contact.html 等浅色背景页面） */
 .info-item strong {
-    color: rgba(255,255,255,0.9);
+    color: var(--text-dark);
     margin-right: 10px;
 }
 
 .info-item span {
+    color: var(--text-light);
+}
+
+/* 首页联系区域 - 深色背景覆盖为白色 */
+.contact-section .info-item strong {
+    color: rgba(255,255,255,0.9);
+}
+
+.contact-section .info-item span {
     color: rgba(255,255,255,0.95);
 }
 
@@ -1230,7 +1270,8 @@ img {
     }
 
     .client-item img {
-        max-height: 55px;
+        max-width: 90px;
+        max-height: 45px;
     }
 
     .banner {
