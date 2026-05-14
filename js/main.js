@@ -98,30 +98,20 @@ function stopAutoPlay() {
 
 dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
-        stopAutoPlay();
         showBanner(index);
-        startAutoPlay();
     });
 });
 
 if (prevArrow) {
     prevArrow.addEventListener('click', () => {
-        stopAutoPlay();
         prevBanner();
-        startAutoPlay();
     });
 }
 
 if (nextArrow) {
     nextArrow.addEventListener('click', () => {
-        stopAutoPlay();
         nextBanner();
-        startAutoPlay();
     });
-}
-
-if (bannerItems.length > 0) {
-    startAutoPlay();
 }
 
 // ===== 移动端菜单 =====
