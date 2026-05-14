@@ -799,7 +799,7 @@ img {
 }
 
 .footer-contact p {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.8) !important;
     margin-bottom: 5px;
 }
 
