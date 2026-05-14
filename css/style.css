@@ -699,7 +699,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 16px;
+    padding: 20px 24px;
     box-sizing: border-box;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -712,8 +712,8 @@ img {
 .client-item img {
     width: auto;
     height: auto;
-    max-width: 100px;
-    max-height: 40px;
+    max-width: 140px;
+    max-height: 55px;
     object-fit: contain;
     display: block;
 }
@@ -1160,7 +1160,7 @@ img {
     }
 
     .client-item {
-        padding: 10px 12px;
+        padding: 16px 20px;
     }
 
     .banner {
