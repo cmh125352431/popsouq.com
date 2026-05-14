@@ -74,9 +74,7 @@ img {
 }
 
 .section-title p {
-    font-size: 14px;
-    color: var(--primary-color);
-    letter-spacing: 3px;
+    display: none;
 }
 
 .btn {
@@ -752,7 +750,7 @@ img {
 }
 
 .info-item span {
-    color: rgba(255,255,255,0.75);
+    color: rgba(255,255,255,0.95);
 }
 
 /* 联系表单 */
