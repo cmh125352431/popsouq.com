@@ -1396,3 +1396,194 @@ img {
     .contact-grid { grid-template-columns: 1fr; }
     .news-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== 联系页面样式 ===== */
+.contact-full {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.contact-card {
+    background: white;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(204,0,0,0.15);
+}
+
+.contact-card-icon {
+    width: 70px;
+    height: 70px;
+    background: #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.contact-card-icon svg {
+    width: 35px;
+    height: 35px;
+}
+
+.contact-card h3 {
+    font-size: 18px;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+}
+
+.contact-main {
+    font-size: 16px;
+    color: #c00;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.contact-secondary {
+    font-size: 13px;
+    color: #888;
+}
+
+/* 联系表单区域 */
+.contact-form-section {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 60px;
+}
+
+.contact-form-full .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.contact-form-full .form-group {
+    text-align: left;
+}
+
+.contact-form-full label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.contact-form-full input,
+.contact-form-full select,
+.contact-form-full textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    background: #fafafa;
+}
+
+.contact-form-full input:focus,
+.contact-form-full select:focus,
+.contact-form-full textarea:focus {
+    outline: none;
+    border-color: #c00;
+    background: white;
+}
+
+.contact-form-full textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.form-group-full {
+    margin-bottom: 25px;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-large {
+    padding: 16px 50px;
+    font-size: 16px;
+    background: #c00;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-large:hover {
+    background: #a00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(204,0,0,0.3);
+}
+
+/* 地图区域 */
+.map-section {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.map-placeholder {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    padding: 80px 40px;
+    border-radius: 8px;
+    border: 2px dashed #ccc;
+}
+
+.map-placeholder p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.map-note {
+    font-size: 14px;
+    color: #888;
+}
+
+/* 响应式 */
+@media (max-width: 1024px) {
+    .contact-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form-full .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .contact-form-section,
+    .map-section {
+        padding: 30px 20px;
+    }
+}
