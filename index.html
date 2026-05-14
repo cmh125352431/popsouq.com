@@ -23,6 +23,135 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/logo.svg">
     <link rel="stylesheet" href="css/style.css?v=2">
+    <style>
+        /* 横向滚动产品展示 */
+        .products-carousel {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .products-carousel .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .section-header::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: #c00;
+            margin-right: 15px;
+        }
+        .section-header h2 {
+            font-size: 28px;
+            color: #333;
+            font-weight: 500;
+        }
+        .carousel-wrapper {
+            position: relative;
+            padding: 0 60px;
+        }
+        .carousel-container {
+            overflow: hidden;
+        }
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.3s ease;
+        }
+        .carousel-item {
+            flex: 0 0 calc(25% - 15px);
+            background: white;
+            border: 2px solid #c00;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .carousel-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .carousel-item-img {
+            position: relative;
+            padding-top: 100%;
+            overflow: hidden;
+        }
+        .carousel-item-img img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carousel-item-title {
+            padding: 12px;
+            background: #c00;
+            color: white;
+            font-size: 13px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: #c00;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        .carousel-arrow:hover {
+            background: #a00;
+            transform: translateY(-50%) scale(1.1);
+        }
+        .carousel-arrow svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+        .carousel-arrow.prev {
+            left: 0;
+        }
+        .carousel-arrow.next {
+            right: 0;
+        }
+        .carousel-arrow:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        @media (max-width: 1024px) {
+            .carousel-item {
+                flex: 0 0 calc(33.333% - 14px);
+            }
+        }
+        @media (max-width: 768px) {
+            .carousel-wrapper {
+                padding: 0 40px;
+            }
+            .carousel-item {
+                flex: 0 0 calc(50% - 10px);
+            }
+            .carousel-arrow {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- 顶部导航栏 -->
@@ -35,7 +164,7 @@
             </div>
             <nav class="nav">
                 <ul>
-<li class="active"><a href="index.html">首页</a></li>
+                    <li class="active"><a href="index.html">首页</a></li>
                     <li><a href="products.html">产品介绍</a></li>
                     <li><a href="about.html">关于我们</a></li>
                     <li><a href="news.html">新闻动态</a></li>
@@ -57,134 +186,133 @@
         </div>
     </header>
 
-    <!-- Banner轮播 -->
+    <!-- 轮播横幅 -->
     <section class="banner">
         <div class="banner-slider">
-            <div class="banner-item active" style="background-image: url('images/banner1.jpg'); background-size: cover; background-position: center;">
+            <div class="banner-slide active">
+                <img src="images/banner/1.jpg" alt="高品质面料供应商" loading="eager">
+                <div class="banner-content">
+                    <h2>高品质面料供应商</h2>
+                    <p>专业经编纬编面料，出口全球</p>
+                    <a href="products.html" class="btn">了解产品</a>
+                </div>
             </div>
-            <div class="banner-item" style="background-image: url('images/banner2.jpg'); background-size: cover; background-position: center;">
+            <div class="banner-slide">
+                <img src="images/banner/2.jpg" alt="定制服务" loading="lazy">
+                <div class="banner-content">
+                    <h2>定制面料解决方案</h2>
+                    <p>根据客户需求定制专属面料</p>
+                    <a href="contact.html" class="btn">联系我们</a>
+                </div>
+            </div>
+            <div class="banner-slide">
+                <img src="images/banner/3.jpg" alt="品质保证" loading="lazy">
+                <div class="banner-content">
+                    <h2>严格品质管控</h2>
+                    <p>从原料到成品，全程质量监控</p>
+                    <a href="about.html" class="btn">关于我们</a>
+                </div>
             </div>
         </div>
         <div class="banner-dots">
-            <span class="dot active" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-        </div>
-        <div class="banner-arrows">
-            <span class="arrow prev">&lt;</span>
-            <span class="arrow next">&gt;</span>
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
         </div>
     </section>
 
-    <!-- 欢迎区域 -->
-    <section class="welcome">
+    <!-- 产品展示 - 横向滚动 -->
+    <section class="products-carousel">
         <div class="container">
-            <div class="welcome-content">
-                <h2>欢迎光临厦门泓劲贸易有限公司</h2>
-                <p>厦门泓劲贸易有限公司成立于<strong>2009年</strong>，是一家专业从事<strong>经编和纬编面料</strong>生产与销售的企业。公司主营各类高品质面料，包括涤氨、锦氨、四面弹、超细无光布等系列产品，产品远销国内外市场。</p>
-                <p>我们秉承"品质第一、客户至上"的经营理念，致力于为客户提供优质的产品和完善的服务。欢迎各界朋友垂询洽谈！</p>
-            </div>
-            <div class="hotline">
-                <span class="label">咨询热线</span>
-                <span class="number">(86) 592-5986779</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- 产品展示 -->
-    <section class="products">
-        <div class="container">
-            <div class="section-title">
+            <div class="section-header">
                 <h2>产品展示</h2>
-                <p>PRODUCTS</p>
             </div>
-            <div class="product-list">
-                <div class="product-item">
-                    <div class="product-img">
-                        <img src="images/products/chinlon-spandex-mesh-fabric.jpg" alt="chinlon-spandex-mesh-fabric" loading="lazy">
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow prev" aria-label="上一个">
+                    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                </button>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-item" onclick="location.href='products.html'">
+                            <div class="carousel-item-img">
+                                <img src="images/products/chinlon-spandex-mesh-fabric.jpg" alt="chinlon-spandex-mesh-fabric" loading="lazy">
+                            </div>
+                            <div class="carousel-item-title">chinlon-spandex-mesh-fabric</div>
+                        </div>
+                        <div class="carousel-item" onclick="location.href='products.html'">
+                            <div class="carousel-item-img">
+                                <img src="images/products/Elastic-polyester-spandex-for-swimwear.jpg" alt="Elastic-polyester-spandex-for-swimwear" loading="lazy">
+                            </div>
+                            <div class="carousel-item-title">Elastic-polyester-spandex-for-swimwear</div>
+                        </div>
+                        <div class="carousel-item" onclick="location.href='products.html'">
+                            <div class="carousel-item-img">
+                                <img src="images/products/IMG_8029.jpg" alt="IMG_8029" loading="lazy">
+                            </div>
+                            <div class="carousel-item-title">IMG_8029</div>
+                        </div>
+                        <div class="carousel-item" onclick="location.href='products.html'">
+                            <div class="carousel-item-img">
+                                <img src="images/products/JG325194.jpg" alt="JG325194" loading="lazy">
+                            </div>
+                            <div class="carousel-item-title">JG325194</div>
+                        </div>
+                        <div class="carousel-item" onclick="location.href='products.html'">
+                            <div class="carousel-item-img">
+                                <img src="images/products/nt211.jpg" alt="nt211" loading="lazy">
+                            </div>
+                            <div class="carousel-item-title">nt211</div>
+                        </div>
+                        <div class="carousel-item" onclick="location.href='products.html'">
+                            <div class="carousel-item-img">
+                                <img src="images/products/nt212-1.jpg" alt="nt212-1" loading="lazy">
+                            </div>
+                            <div class="carousel-item-title">nt212-1</div>
+                        </div>
+                        <div class="carousel-item" onclick="location.href='products.html'">
+                            <div class="carousel-item-img">
+                                <img src="images/products/nt212-2.jpg" alt="nt212-2" loading="lazy">
+                            </div>
+                            <div class="carousel-item-title">nt212-2</div>
+                        </div>
+                        <div class="carousel-item" onclick="location.href='products.html'">
+                            <div class="carousel-item-img">
+                                <img src="images/products/nt212.jpg" alt="nt212" loading="lazy">
+                            </div>
+                            <div class="carousel-item-title">nt212</div>
+                        </div>
+                        <div class="carousel-item" onclick="location.href='products.html'">
+                            <div class="carousel-item-img">
+                                <img src="images/products/Nylon spandex.jpg" alt="Nylon spandex" loading="lazy">
+                            </div>
+                            <div class="carousel-item-title">Nylon spandex</div>
+                        </div>
+                        <div class="carousel-item" onclick="location.href='products.html'">
+                            <div class="carousel-item-img">
+                                <img src="images/products/polyester-nylon-melange-fabric-for-sportswear-and.jpg" alt="polyester-nylon-melange-fabric-for-sportswear-and" loading="lazy">
+                            </div>
+                            <div class="carousel-item-title">polyester-nylon-melange-fabric</div>
+                        </div>
+                        <div class="carousel-item" onclick="location.href='products.html'">
+                            <div class="carousel-item-img">
+                                <img src="images/products/polyester-spandex-positive-ion-fabric-for-sportswear.jpg" alt="polyester-spandex-positive-ion-fabric-for-sportswear" loading="lazy">
+                            </div>
+                            <div class="carousel-item-title">polyester-spandex-positive-ion</div>
+                        </div>
+                        <div class="carousel-item" onclick="location.href='products.html'">
+                            <div class="carousel-item-img">
+                                <img src="images/products/Popular-100-polyester-fabric-for-T-shirt.jpg" alt="Popular-100-polyester-fabric-for-T-shirt" loading="lazy">
+                            </div>
+                            <div class="carousel-item-title">Popular-100-polyester-fabric</div>
+                        </div>
                     </div>
-                    <h3>chinlon-spandex-mesh-fabric</h3>
-                    <p>待定</p>
                 </div>
-                <div class="product-item">
-                    <div class="product-img">
-                        <img src="images/products/Elastic-polyester-spandex-for-swimwear.jpg" alt="Elastic-polyester-spandex-for-swimwear" loading="lazy">
-                    </div>
-                    <h3>Elastic-polyester-spandex-for-swimwear</h3>
-                    <p>待定</p>
-                </div>
-                <div class="product-item">
-                    <div class="product-img">
-                        <img src="images/products/IMG_8029.jpg" alt="IMG_8029" loading="lazy">
-                    </div>
-                    <h3>IMG_8029</h3>
-                    <p>待定</p>
-                </div>
-                <div class="product-item">
-                    <div class="product-img">
-                        <img src="images/products/JG325194.jpg" alt="JG325194" loading="lazy">
-                    </div>
-                    <h3>JG325194</h3>
-                    <p>待定</p>
-                </div>
-                <div class="product-item">
-                    <div class="product-img">
-                        <img src="images/products/nt211.jpg" alt="nt211" loading="lazy">
-                    </div>
-                    <h3>nt211</h3>
-                    <p>待定</p>
-                </div>
-                <div class="product-item">
-                    <div class="product-img">
-                        <img src="images/products/nt212-1.jpg" alt="nt212-1" loading="lazy">
-                    </div>
-                    <h3>nt212-1</h3>
-                    <p>待定</p>
-                </div>
-                <div class="product-item">
-                    <div class="product-img">
-                        <img src="images/products/nt212-2.jpg" alt="nt212-2" loading="lazy">
-                    </div>
-                    <h3>nt212-2</h3>
-                    <p>待定</p>
-                </div>
-                <div class="product-item">
-                    <div class="product-img">
-                        <img src="images/products/nt212.jpg" alt="nt212" loading="lazy">
-                    </div>
-                    <h3>nt212</h3>
-                    <p>待定</p>
-                </div>
-                <div class="product-item">
-                    <div class="product-img">
-                        <img src="images/products/Nylon spandex.jpg" alt="Nylon spandex" loading="lazy">
-                    </div>
-                    <h3>Nylon spandex</h3>
-                    <p>待定</p>
-                </div>
-                <div class="product-item">
-                    <div class="product-img">
-                        <img src="images/products/polyester-nylon-melange-fabric-for-sportswear-and.jpg" alt="polyester-nylon-melange-fabric-for-sportswear-and" loading="lazy">
-                    </div>
-                    <h3>polyester-nylon-melange-fabric-for-sportswear-and</h3>
-                    <p>待定</p>
-                </div>
-                <div class="product-item">
-                    <div class="product-img">
-                        <img src="images/products/polyester-spandex-positive-ion-fabric-for-sportswear.jpg" alt="polyester-spandex-positive-ion-fabric-for-sportswear" loading="lazy">
-                    </div>
-                    <h3>polyester-spandex-positive-ion-fabric-for-sportswear</h3>
-                    <p>待定</p>
-                </div>
-                <div class="product-item">
-                    <div class="product-img">
-                        <img src="images/products/Popular-100-polyester-fabric-for-T-shirt.jpg" alt="Popular-100-polyester-fabric-for-T-shirt" loading="lazy">
-                    </div>
-                    <h3>Popular-100-polyester-fabric-for-T-shirt</h3>
-                    <p>待定</p>
-                </div>
+                <button class="carousel-arrow next" aria-label="下一个">
+                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+                </button>
             </div>
-            <div class="view-more">
-                <a href="products.html" class="btn">查看更多产品</a>
+            <div class="view-more" style="text-align: center; margin-top: 40px;">
+                <a href="products.html" class="btn" style="display: inline-block; padding: 12px 40px; background: #c00; color: white; text-decoration: none; border-radius: 25px;">查看更多产品</a>
             </div>
         </div>
     </section>
@@ -198,165 +326,84 @@
             </div>
             <div class="knowledge-list">
                 <div class="knowledge-item">
-                    <h3><a href="knowledge/ammon-fabric.html">氨纶织物(面料)是什么?</a></h3>
-                    <p>氨纶是一种弹性纤维，具有极佳的弹性和回弹性，广泛应用于服装面料中...</p>
+                    <div class="knowledge-img">
+                        <img src="images/knowledge/fabric-types.jpg" alt="面料分类知识" loading="lazy">
+                    </div>
+                    <div class="knowledge-content">
+                        <h3>面料分类与特性</h3>
+                        <p>了解不同面料的分类方法、物理特性和适用范围，帮助您选择最适合的面料产品...</p>
+                        <a href="knowledge/fabric-types.html" class="read-more">阅读更多</a>
+                    </div>
                 </div>
                 <div class="knowledge-item">
-                    <h3><a href="knowledge/four-way-stretch.html">四面弹是什么面料?</a></h3>
-                    <p>四面弹面料是指经向和纬向都具有弹性的面料，穿着舒适无束缚...</p>
+                    <div class="knowledge-img">
+                        <img src="images/knowledge/fabric-care.jpg" alt="面料保养知识" loading="lazy">
+                    </div>
+                    <div class="knowledge-content">
+                        <h3>面料保养指南</h3>
+                        <p>正确的保养方法可以延长面料使用寿命，保持服装的美观和舒适度...</p>
+                        <a href="knowledge/fabric-care.html" class="read-more">阅读更多</a>
+                    </div>
                 </div>
                 <div class="knowledge-item">
-                    <h3><a href="knowledge/dty.html">DTY(拉伸变形丝)是什么?</a></h3>
-                    <p>DTY是Draw Textured Yarn的缩写，即拉伸变形丝，是常见的化纤原料...</p>
-                </div>
-                <div class="knowledge-item">
-                    <h3><a href="knowledge/dty-fdy.html">DTY与FDY的区别是什么?</a></h3>
-                    <p>DTY是拉伸变形丝，FDY是全拉伸丝，两者在工艺和性能上有所区别...</p>
-                </div>
-                <div class="knowledge-item">
-                    <h3><a href="knowledge/sorona.html">索罗娜是什么?</a></h3>
-                    <p>索罗娜是一种新型环保弹性纤维，具有优异的弹性和回弹性...</p>
+                    <div class="knowledge-img">
+                        <img src="images/knowledge/industry-trends.jpg" alt="行业趋势" loading="lazy">
+                    </div>
+                    <div class="knowledge-content">
+                        <h3>纺织行业趋势</h3>
+                        <p>了解最新的纺织技术发展、市场需求变化和可持续发展趋势...</p>
+                        <a href="knowledge/industry-trends.html" class="read-more">阅读更多</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 新闻动态 + 关于我们 -->
-    <section class="news-about">
+    <!-- 关于我们 -->
+    <section class="about">
         <div class="container">
-            <div class="news-column">
-                <div class="section-title">
-                    <h2>新闻动态</h2>
-                    <p>NEWS</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>关于泓劲</h2>
+                    <p>厦门泓劲贸易有限公司成立于2009年，是一家专业从事经编、纬编面料研发、生产和销售的综合性企业。公司位于美丽的海滨城市厦门，拥有现代化的生产基地和完善的销售网络。</p>
+                    <p>我们专注于高品质面料的生产，产品涵盖涤氨、锦氨、四面弹等多个系列，广泛应用于运动服装、泳装、内衣、瑜伽服等领域。凭借优质的产品和专业的服务，我们的产品远销欧美、东南亚等多个国家和地区。</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">年行业经验</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">产品种类</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">合作客户</span>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn">了解更多</a>
                 </div>
-                <div class="news-list">
-                    <div class="news-item">
-                        <span class="news-date">2026-05-01</span>
-                        <h4><a href="#">公司参加2026年上海国际纺织面料展</a></h4>
-                    </div>
-                    <div class="news-item">
-                        <span class="news-date">2026-04-15</span>
-                        <h4><a href="#">新品上市：超细无光系列面料</a></h4>
-                    </div>
-                    <div class="news-item">
-                        <span class="news-date">2026-03-20</span>
-                        <h4><a href="#">公司荣获"优质供应商"称号</a></h4>
-                    </div>
-                    <div class="news-item">
-                        <span class="news-date">2026-02-28</span>
-                        <h4><a href="#">欢迎新老客户莅临指导</a></h4>
-                    </div>
-                </div>
-                <div class="view-more">
-                    <a href="news.html" class="btn btn-sm">查看更多</a>
-                </div>
-            </div>
-            <div class="about-column">
-                <div class="section-title">
-                    <h2>关于我们</h2>
-                    <p>ABOUT US</p>
-                </div>
-                <div class="about-content">
-                    <p>厦门泓劲贸易有限公司成立于2009年，坐落于美丽的海滨城市厦门。</p>
-                    <p>公司专业从事经编和纬编面料的生产与销售，产品涵盖涤氨、锦氨、四面弹、超细无光布等多个系列，广泛应用于服装、泳装、运动服、内衣等领域。</p>
-                    <p>我们拥有多年的行业经验和稳定的客户群体，产品不仅畅销国内，还出口至东南亚、欧美等地区。</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <span class="stat-num">16+</span>
-                        <span class="stat-label">年行业经验</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num">100+</span>
-                        <span class="stat-label">产品种类</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num">500+</span>
-                        <span class="stat-label">合作客户</span>
-                    </div>
-                </div>
-                <div class="view-more">
-                    <a href="about.html" class="btn btn-sm">了解更多</a>
+                <div class="about-img">
+                    <img src="images/about-preview.jpg" alt="关于泓劲" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 知名客户 -->
+    <!-- 合作伙伴 -->
     <section class="clients">
         <div class="container">
             <div class="section-title">
                 <h2>合作伙伴</h2>
                 <p>PARTNERS</p>
             </div>
-            <div class="client-list">
+            <div class="clients-grid">
                 <div class="client-item"><img src="images/partners/ca.jpg" alt="C&A" loading="lazy"></div>
                 <div class="client-item"><img src="images/partners/walmart.jpg" alt="Walmart" loading="lazy"></div>
                 <div class="client-item"><img src="images/partners/underarmour.jpg" alt="Under Armour" loading="lazy"></div>
                 <div class="client-item"><img src="images/partners/victoriassecret.jpg" alt="Victoria's Secret" loading="lazy"></div>
                 <div class="client-item"><img src="images/partners/target.png" alt="Target" loading="lazy"></div>
                 <div class="client-item"><img src="images/partners/adidas.png" alt="Adidas" loading="lazy"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 联系方式 -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>联系我们</h2>
-                <p>CONTACT US</p>
-            </div>
-            <div class="contact-wrapper">
-                <div class="contact-form">
-                    <h3>在线留言</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="您的姓名" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="电子邮箱" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" name="phone" placeholder="联系电话">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="留言内容" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">提交留言</button>
-                    </form>
-                </div>
-                <div class="contact-info">
-                    <h3>联系方式</h3>
-                    <div class="info-item">
-                        <strong>公司名称：</strong>
-                        <span>厦门泓劲贸易有限公司</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>地　　址：</strong>
-                        <span>厦门市思明区洪莲东二里25号万科金域蓝湾5B栋2401</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>电　　话：</strong>
-                        <span>(86) 592-5986779 / 13720877338</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>传　　真：</strong>
-                        <span>(86) 592-5986619</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>电子邮箱：</strong>
-                        <span>qy125100@hungjintrade.com</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>成立时间：</strong>
-                        <span>2009年</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>主营业务：</strong>
-                        <span>经编和纬编面料，进出口贸易</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -387,5 +434,53 @@
     </footer>
 
     <script src="js/main.js?v=2"></script>
+    <script>
+        // 产品轮播功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.carousel-track');
+            const prevBtn = document.querySelector('.carousel-arrow.prev');
+            const nextBtn = document.querySelector('.carousel-arrow.next');
+            const items = document.querySelectorAll('.carousel-item');
+            
+            let currentIndex = 0;
+            const itemsPerView = window.innerWidth <= 768 ? 2 : window.innerWidth <= 1024 ? 3 : 4;
+            const maxIndex = Math.max(0, items.length - itemsPerView);
+            
+            function updateCarousel() {
+                const itemWidth = items[0].offsetWidth + 20; // 包含gap
+                track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+                
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex >= maxIndex;
+            }
+            
+            prevBtn.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+            
+            // 初始化
+            updateCarousel();
+            
+            // 窗口大小改变时重新计算
+            window.addEventListener('resize', function() {
+                const newItemsPerView = window.innerWidth <= 768 ? 2 : window.innerWidth <= 1024 ? 3 : 4;
+                const newMaxIndex = Math.max(0, items.length - newItemsPerView);
+                if (currentIndex > newMaxIndex) {
+                    currentIndex = newMaxIndex;
+                }
+                updateCarousel();
+            });
+        });
+    </script>
 </body>
 </html>
