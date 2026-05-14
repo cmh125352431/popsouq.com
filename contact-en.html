@@ -9,180 +9,160 @@
     <title>Contact Us | Xiamen Hungjin Trading Co., Ltd.</title>
     <link rel="stylesheet" href="css/style.css?v=2">
     <style>
-        .contact-hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 80px 0 60px;
+        .contact-page {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .contact-header {
             text-align: center;
-        }
-        .contact-hero h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
-            font-weight: 300;
-        }
-        .contact-hero p {
-            font-size: 16px;
-            color: #c00;
-            letter-spacing: 3px;
-        }
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            min-height: 600px;
-        }
-        .contact-info-side {
-            background: #1a1a2e;
             color: white;
-            padding: 60px;
+            margin-bottom: 50px;
         }
-        .contact-info-side h2 {
+        .contact-header h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        .contact-header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 30px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+        }
+        .contact-info-panel {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 50px;
+            color: white;
+        }
+        .contact-info-panel h2 {
             font-size: 28px;
             margin-bottom: 40px;
-            font-weight: 300;
+            font-weight: 400;
         }
-        .contact-info-side h2 span {
-            color: #c00;
-        }
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
+        .info-block {
             margin-bottom: 35px;
+            padding-left: 60px;
+            position: relative;
         }
-        .info-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(204,0,0,0.2);
+        .info-block::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
         }
-        .info-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: #c00;
-        }
-        .info-content h3 {
+        .info-block.phone::before { content: '📞'; font-size: 20px; text-align: center; line-height: 40px; }
+        .info-block.email::before { content: '✉️'; font-size: 20px; text-align: center; line-height: 40px; }
+        .info-block.address::before { content: '📍'; font-size: 20px; text-align: center; line-height: 40px; }
+        .info-block.time::before { content: '🕐'; font-size: 20px; text-align: center; line-height: 40px; }
+        .info-block h3 {
             font-size: 14px;
-            color: #888;
-            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 8px;
+            opacity: 0.9;
         }
-        .info-content p {
+        .info-block p {
             font-size: 16px;
             line-height: 1.6;
         }
-        .contact-form-side {
-            background: white;
-            padding: 60px;
+        .contact-form-panel {
+            padding: 50px;
         }
-        .contact-form-side h2 {
+        .contact-form-panel h2 {
             font-size: 28px;
+            color: #333;
             margin-bottom: 10px;
-            color: #1a1a2e;
+            font-weight: 400;
         }
-        .contact-form-side .subtitle {
+        .contact-form-panel .subtitle {
             color: #888;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
         }
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         .form-group label {
             display: block;
             font-size: 13px;
-            color: #333;
+            color: #555;
             margin-bottom: 8px;
             font-weight: 500;
         }
         .form-group input,
-        .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 14px 0;
-            border: none;
-            border-bottom: 2px solid #e0e0e0;
+            padding: 14px 18px;
+            border: 2px solid #e8e8e8;
+            border-radius: 10px;
             font-size: 15px;
             font-family: inherit;
-            background: transparent;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
+            background: #fafafa;
         }
         .form-group input:focus,
-        .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-bottom-color: #c00;
+            border-color: #667eea;
+            background: white;
         }
         .form-group textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 120px;
         }
         .submit-btn {
-            background: #c00;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
             padding: 16px 50px;
-            font-size: 15px;
+            font-size: 16px;
             border-radius: 30px;
             cursor: pointer;
             transition: all 0.3s;
-            margin-top: 20px;
+            font-weight: 500;
         }
         .submit-btn:hover {
-            background: #a00;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(204,0,0,0.3);
-        }
-        .map-section {
-            padding: 80px 0;
-            background: #f9f9f9;
-        }
-        .map-section h2 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 40px;
-            color: #1a1a2e;
-        }
-        .map-container {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-        .map-placeholder {
-            height: 400px;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .map-placeholder svg {
-            width: 60px;
-            height: 60px;
-            fill: #c00;
-            margin-bottom: 20px;
-        }
-        .map-placeholder h3 {
-            font-size: 20px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .map-placeholder p {
-            color: #666;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(102,126,234,0.4);
         }
         @media (max-width: 768px) {
-            .contact-wrapper {
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
-            .contact-info-side,
-            .contact-form-side {
-                padding: 40px 30px;
+            .contact-info-panel,
+            .contact-form-panel {
+                padding: 30px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .contact-header h1 {
+                font-size: 32px;
             }
         }
     </style>
@@ -219,105 +199,79 @@
         </div>
     </header>
 
-    <section class="contact-hero">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <p>CONTACT US</p>
-        </div>
-    </section>
-
-    <section class="contact-main-section">
-        <div class="contact-wrapper">
-            <div class="contact-info-side">
-                <h2>Contact <span>Info</span></h2>
-                
-                <div class="info-item">
-                    <div class="info-icon">
-                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                    </div>
-                    <div class="info-content">
+    <div class="contact-page">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h1>Contact Us</h1>
+                <p>We look forward to working with you</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info-panel">
+                    <h2>Contact Info</h2>
+                    
+                    <div class="info-block phone">
                         <h3>Phone</h3>
                         <p>(86) 592-5986779<br>Mobile: 13720877338</p>
                     </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon">
-                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    </div>
-                    <div class="info-content">
+                    
+                    <div class="info-block email">
                         <h3>Email</h3>
                         <p>qy125100@hungjintrade.com</p>
                     </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                    </div>
-                    <div class="info-content">
+                    
+                    <div class="info-block address">
                         <h3>Address</h3>
                         <p>Unit 2401, Bldg 5B, Vanke Jinyu Lanwan<br>No.25 Honglian East 2nd Rd, Xiamen</p>
                     </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon">
-                        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-                    </div>
-                    <div class="info-content">
+                    
+                    <div class="info-block time">
                         <h3>Business Hours</h3>
-                        <p>Mon - Sat 08:30 - 17:30</p>
+                        <p>Monday - Saturday<br>08:30 - 17:30</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="contact-form-side">
-                <h2>Send Message</h2>
-                <p class="subtitle">Fill out the form below and we'll get back to you soon</p>
                 
-                <form action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                    <input type="hidden" name="subject" value="New Inquiry from popsouq.com">
+                <div class="contact-form-panel">
+                    <h2>Send Message</h2>
+                    <p class="subtitle">Fill out the form below and we'll get back to you soon</p>
                     
-                    <div class="form-group">
-                        <label>Your Name *</label>
-                        <input type="text" name="name" placeholder="Enter your name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Email *</label>
-                        <input type="email" name="email" placeholder="Enter your email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Phone</label>
-                        <input type="tel" name="phone" placeholder="Enter your phone">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Message *</label>
-                        <textarea name="message" placeholder="Enter your message" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <section class="map-section">
-        <div class="container">
-            <h2>Our Location</h2>
-            <div class="map-container">
-                <div class="map-placeholder">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                    <h3>Unit 2401, Bldg 5B, Vanke Jinyu Lanwan</h3>
-                    <p>No.25 Honglian East 2nd Rd, Siming Dist, Xiamen · Core area of Xiamen Island</p>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        <input type="hidden" name="subject" value="New Inquiry from popsouq.com">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Your Name *</label>
+                                <input type="text" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Company</label>
+                                <input type="text" name="company" placeholder="Enter company name">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input type="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="tel" name="phone" placeholder="Enter your phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Message *</label>
+                            <textarea name="message" placeholder="Enter your message..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <footer class="footer">
         <div class="container">
@@ -337,7 +291,7 @@
                     <p>Email: qy125100@hungjintrade.com</p>
                 </div>
             </div>
-            <div class="footer-bottom">
+            <div class="footer-footer-bottom">
                 <p>&copy; 2009-2026 Xiamen Hungjin Trading Co., Ltd. All Rights Reserved</p>
             </div>
         </div>
