@@ -152,6 +152,7 @@ img {
     display: block;
     transition: color 0.3s;
     font-size: 18px;
+    font-weight: 600;
 }
 
 .nav ul li a:hover,
