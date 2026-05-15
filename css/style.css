@@ -963,6 +963,23 @@ img {
     background: #a00;
 }
 
+.reset-btn {
+    background: #999;
+    color: white;
+    border: none;
+    padding: 13px 36px;
+    font-size: 17px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    margin-left: 12px;
+}
+
+.reset-btn:hover {
+    background: #777;
+}
+
 /* 地图区域 */
 .map-section {
     padding: 60px 0;
