@@ -20,7 +20,35 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://popsouq.com/">
     
-    <link rel="stylesheet" href="css/style.css?v=9">
+    <link rel="stylesheet" href="css/style.css?v=29">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "厦门泓劲贸易有限公司",
+          "url": "https://popsouq.com/",
+          "inLanguage": "zh-CN"
+        },
+        {
+          "@type": "Organization",
+          "name": "厦门泓劲贸易有限公司",
+          "url": "https://popsouq.com/",
+          "logo": "https://popsouq.com/images/logo.svg",
+          "description": "专业经编纬编面料供应商，主营涤氨、锦氨、四面弹等高品质面料，出口贸易",
+          "foundingDate": "2009",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+86-592-12345678",
+            "contactType": "customer service"
+          }
+        }
+      ]
+    }
+    </script>
     
 </head>
 <body>
@@ -310,64 +338,105 @@
                 <h2>联系我们</h2>
                 <p>CONTACT US</p>
             </div>
-            <div class="contact-wrapper">
-                <div class="contact-form">
-                    <h3>发送消息</h3>
-                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            
+            <div class="contact-layout">
+                <div class="contact-info-box">
+                    <h2>联系方式</h2>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l4.59-4.58L18 11l-6 6z"/></svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>公司</h3>
+                            <p>厦门泓劲贸易有限公司</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>地址</h3>
+                            <p>厦门市思明区洪莲东二里25号<br>万科金域蓝湾5B栋2401</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>电话</h3>
+                            <p>(86) 592-5986779<br>13720877338</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>邮箱</h3>
+                            <p>qy125100@xmhungjin.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>主营业务</h3>
+                            <p>经编纬编面料、进出口贸易</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-box">
+                    <h2>在线留言</h2>
+                    <p class="subtitle">填写下方表单，我们会尽快回复您</p>
+                    
+                    <form action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="PLACEHOLDER-REPLACE-WITH-REAL-KEY">
                         <input type="hidden" name="subject" value="新咨询来自 popsouq.com">
                         <input type="checkbox" name="botcheck" style="display:none">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="您的姓名" required>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>您的姓名 *</label>
+                                <input type="text" name="name" placeholder="请输入姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <label>公司名称</label>
+                                <input type="text" name="company" placeholder="请输入公司名称">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="邮箱" required>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>电子邮箱 *</label>
+                                <input type="email" name="email" placeholder="请输入邮箱" required>
+                            </div>
+                            <div class="form-group">
+                                <label>联系电话</label>
+                                <input type="tel" name="phone" placeholder="请输入电话">
+                            </div>
                         </div>
+                        
                         <div class="form-group">
-                            <input type="tel" name="phone" placeholder="电话">
+                            <label>留言内容 *</label>
+                            <textarea name="message" placeholder="请输入您的留言内容..." required></textarea>
                         </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="您的留言" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">提交</button>
+                        
+                        <button type="submit" class="submit-btn">提交留言</button>
                     </form>
-                </div>
-                <div class="contact-info">
-                    <h3>联系方式</h3>
-                    <div class="info-item">
-                        <strong>公司：</strong>
-                        <span>厦门泓劲贸易有限公司</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>地址：</strong>
-                        <span>厦门市思明区洪莲东二路25号万科金域蓝湾5B栋2401室</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>电话：</strong>
-                        <span>(86) 592-5986779 / 13720877338</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>传真：</strong>
-                        <span>(86) 592-5986619</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>邮箱：</strong>
-                        <span>qy125100@xmhungjin.com</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>成立时间：</strong>
-                        <span>2009年</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>主营业务：</strong>
-                        <span>经编纬编面料、进出口贸易</span>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 底部 -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
