@@ -2019,11 +2019,6 @@ img {
     display: block;
 }
 
-.gallery-item-large {
-    grid-column: span 2;
-    aspect-ratio: 16/9;
-}
-
 .gallery-caption {
     position: absolute;
     bottom: 0;
@@ -2042,10 +2037,6 @@ img {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-    
-    .gallery-item-large {
-        grid-column: span 2;
-    }
 }
 
 /* ===== 资质认证展示 - 横向阅读版 ===== */
@@ -2054,54 +2045,53 @@ img {
     background: #f5f5f5;
 }
 
-.certificates-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
     margin-top: 40px;
 }
 
-.certificate-card {
+.certificate-item {
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    border: 2px solid #e0e0e0;
-    display: flex;
-    align-items: stretch;
+    border: 1px solid #f0f0f0;
     transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-.certificate-card:hover {
+.certificate-item:hover {
     box-shadow: 0 4px 20px rgba(0,0,0,0.12);
 }
 
-.certificate-image {
-    flex: 0 0 320px;
-    padding: 25px;
+.certificate-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
     background: #fafafa;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-right: 2px solid #e0e0e0;
+    padding: 20px;
 }
 
-.certificate-image img {
+.certificate-img img {
     max-width: 100%;
-    max-height: 240px;
+    max-height: 100%;
     width: auto;
     height: auto;
     object-fit: contain;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     border-radius: 4px;
 }
 
-.certificate-content {
-    flex: 1;
-    padding: 30px 35px;
+.certificate-info {
+    padding: 24px 28px 28px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    flex: 1;
 }
 
 .certificate-badge {
@@ -2109,59 +2099,33 @@ img {
     background: #c00;
     color: #fff;
     font-size: 16px;
-    font-weight: 700;
-    padding: 8px 16px;
+    font-weight: 600;
+    padding: 6px 14px;
     border-radius: 4px;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
     align-self: flex-start;
 }
 
-.certificate-content h3 {
-    font-size: 22px;
+.certificate-info h3 {
+    font-size: 20px;
     color: #333;
     margin-bottom: 12px;
     font-weight: 700;
     line-height: 1.3;
 }
 
-.certificate-content p {
+.certificate-info p {
     font-size: 16px;
-    color: #555;
+    color: #666;
     line-height: 1.7;
     margin: 0;
 }
 
-.certificate-divider {
-    width: 50px;
-    height: 3px;
-    background: #c00;
-    margin: 15px 0;
-    border-radius: 2px;
-}
-
 /* 响应式 - 平板 */
 @media screen and (max-width: 900px) {
-    .certificate-card {
-        flex-direction: column;
-    }
-    
-    .certificate-image {
-        flex: none;
-        border-right: none;
-        border-bottom: 2px solid #e0e0e0;
-        padding: 20px;
-    }
-    
-    .certificate-image img {
-        max-height: 200px;
-    }
-    
-    .certificate-content {
-        padding: 25px;
-    }
-    
-    .certificate-content h3 {
-        font-size: 20px;
+    .certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
@@ -2171,28 +2135,31 @@ img {
         padding: 40px 0;
     }
     
-    .certificates-list {
+    .certificates-grid {
+        grid-template-columns: 1fr;
         gap: 20px;
     }
     
-    .certificate-image {
+    .certificate-img {
         padding: 15px;
+        aspect-ratio: auto;
+        max-height: 220px;
     }
     
-    .certificate-image img {
-        max-height: 160px;
+    .certificate-img img {
+        max-height: 180px;
     }
     
-    .certificate-content {
+    .certificate-info {
         padding: 20px;
     }
     
-    .certificate-content h3 {
+    .certificate-info h3 {
         font-size: 18px;
     }
     
-    .certificate-content p {
-        font-size: 16px;
+    .certificate-info p {
+        font-size: 15px;
     }
 }
 
@@ -2201,11 +2168,6 @@ img {
     .gallery-grid {
         grid-template-columns: 1fr;
         gap: 15px;
-    }
-    
-    .gallery-item-large {
-        grid-column: span 1;
-        aspect-ratio: 4/3;
     }
     
     .gallery-caption {
