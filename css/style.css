@@ -2026,6 +2026,87 @@ img {
     }
 }
 
+/* ===== 资质认证展示 ===== */
+.certificates-section {
+    padding: 60px 0;
+    background-color: var(--bg-white);
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.certificate-item {
+    background: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.certificate-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.certificate-img {
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+}
+
+.certificate-img img {
+    max-width: 100%;
+    max-height: 260px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.certificate-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.certificate-info h3 {
+    font-size: 16px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.certificate-info p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* 响应式 - 平板 */
+@media screen and (max-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .certificate-img {
+        min-height: 220px;
+    }
+    
+    .certificate-img img {
+        max-height: 200px;
+    }
+}
+
 /* 响应式 - 手机 */
 @media screen and (max-width: 480px) {
     .gallery-grid {
@@ -2040,5 +2121,18 @@ img {
     
     .gallery-caption {
         font-size: 14px;
+    }
+    
+    .certificates-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .certificate-img {
+        min-height: 200px;
+    }
+    
+    .certificate-img img {
+        max-height: 180px;
     }
 }
