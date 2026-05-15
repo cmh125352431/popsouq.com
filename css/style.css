@@ -2026,110 +2026,151 @@ img {
     }
 }
 
-/* ===== 资质认证展示 - 老年人友好版 ===== */
+/* ===== 资质认证展示 - 横向阅读版 ===== */
 .certificates-section {
     padding: 60px 0;
     background: #f5f5f5;
 }
 
-.certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.certificates-list {
+    display: flex;
+    flex-direction: column;
     gap: 30px;
     margin-top: 40px;
 }
 
-.certificate-item {
+.certificate-card {
     background: #fff;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     border: 2px solid #e0e0e0;
+    display: flex;
+    align-items: stretch;
     transition: box-shadow 0.3s ease;
 }
 
-.certificate-item:hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+.certificate-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
 }
 
-.certificate-img {
-    padding: 20px;
+.certificate-image {
+    flex: 0 0 320px;
+    padding: 25px;
     background: #fafafa;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 260px;
-    border-bottom: 2px solid #e0e0e0;
+    border-right: 2px solid #e0e0e0;
 }
 
-.certificate-img img {
+.certificate-image img {
     max-width: 100%;
-    max-height: 220px;
+    max-height: 240px;
     width: auto;
     height: auto;
     object-fit: contain;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    border-radius: 4px;
 }
 
-.certificate-info {
-    padding: 20px;
-    text-align: center;
-    background: #fff;
+.certificate-content {
+    flex: 1;
+    padding: 30px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.certificate-info h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
-    font-weight: 700;
-    line-height: 1.4;
-}
-
-.certificate-info p {
-    font-size: 15px;
-    color: #666;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* 证书标签 - 高对比度 */
 .certificate-badge {
     display: inline-block;
     background: #c00;
     color: #fff;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
-    padding: 6px 14px;
+    padding: 8px 16px;
     border-radius: 4px;
+    margin-bottom: 15px;
+    align-self: flex-start;
+}
+
+.certificate-content h3 {
+    font-size: 22px;
+    color: #333;
     margin-bottom: 12px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.certificate-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.certificate-divider {
+    width: 50px;
+    height: 3px;
+    background: #c00;
+    margin: 15px 0;
+    border-radius: 2px;
 }
 
 /* 响应式 - 平板 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
+    .certificate-card {
+        flex-direction: column;
+    }
+    
+    .certificate-image {
+        flex: none;
+        border-right: none;
+        border-bottom: 2px solid #e0e0e0;
+        padding: 20px;
+    }
+    
+    .certificate-image img {
+        max-height: 200px;
+    }
+    
+    .certificate-content {
+        padding: 25px;
+    }
+    
+    .certificate-content h3 {
+        font-size: 20px;
+    }
+}
+
+/* 响应式 - 手机 */
+@media screen and (max-width: 480px) {
     .certificates-section {
         padding: 40px 0;
     }
     
-    .certificates-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
+    .certificates-list {
+        gap: 20px;
     }
     
-    .certificate-img {
-        min-height: 200px;
+    .certificate-image {
         padding: 15px;
     }
     
-    .certificate-img img {
-        max-height: 180px;
+    .certificate-image img {
+        max-height: 160px;
     }
     
-    .certificate-info h3 {
-        font-size: 17px;
+    .certificate-content {
+        padding: 20px;
     }
     
-    .certificate-info p {
-        font-size: 14px;
+    .certificate-content h3 {
+        font-size: 18px;
+    }
+    
+    .certificate-content p {
+        font-size: 15px;
     }
 }
 
