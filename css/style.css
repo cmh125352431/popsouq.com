@@ -1340,6 +1340,7 @@ img {
         padding: 12px 0;
         display: block;
         border-bottom: 1px solid rgba(255,255,255,0.1);
+        font-size: 18px;
     }
 
     .header-right {
