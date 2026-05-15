@@ -749,6 +749,27 @@ img {
     color: #333333;
 }
 
+.contact-section .section-header {
+    text-align: center;
+    display: block;
+}
+
+.contact-section .section-header::before {
+    display: none;
+}
+
+.contact-section .section-header h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.contact-section .section-header p {
+    font-size: 16px;
+    color: #666;
+}
+
 .contact-section .section-title h2,
 .contact-section .section-title p {
     color: #1a1a2e;
