@@ -102,6 +102,10 @@ dots.forEach((dot, index) => {
     });
 });
 
+// 初始化轮播：显示第一张，启动自动播放
+showBanner(0);
+startAutoPlay();
+
 if (prevArrow) {
     prevArrow.addEventListener('click', () => {
         prevBanner();
@@ -129,27 +133,24 @@ const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
         const formData = new FormData(contactForm);
         const name = formData.get('name');
         const email = formData.get('email');
-        const phone = formData.get('phone');
         const message = formData.get('message');
         
         if (!name || !email || !message) {
+            e.preventDefault();
             alert('请填写必填项（姓名、邮箱、留言内容）');
             return;
         }
         
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
+            e.preventDefault();
             alert('请输入有效的邮箱地址');
             return;
         }
-        
-        alert('感谢您的留言！我们会尽快与您联系。');
-        contactForm.reset();
+        // 验证通过，表单由浏览器提交到 action URL
     });
 }
 
