@@ -79,8 +79,10 @@ img {
 }
 
 .btn {
+    font-size: 17px;
+    border-radius: 8px;
     display: inline-block;
-    padding: 10px 30px;
+    padding: 13px 36px;
     background-color: var(--primary-color);
     color: var(--bg-white);
     border: none;
@@ -550,6 +552,7 @@ img {
     color: var(--text-light);
     margin-bottom: 15px;
     text-align: justify;
+    text-indent: 2em;
 }
 
 .welcome-content strong {
@@ -947,6 +950,11 @@ img {
     min-height: 120px;
 }
 
+.submit-btn, .reset-btn {
+    min-width: 140px;
+    text-align: center;
+}
+
 .submit-btn {
     background: #c00;
     color: white;
@@ -964,7 +972,7 @@ img {
 }
 
 .reset-btn {
-    background: #999;
+    background: #c00;
     color: white;
     border: none;
     padding: 13px 36px;
@@ -977,7 +985,7 @@ img {
 }
 
 .reset-btn:hover {
-    background: #777;
+    background: #a00;
 }
 
 /* 地图区域 */
@@ -1256,7 +1264,7 @@ img {
     background: linear-gradient(135deg, #c00 0%, #e60000 100%);
     color: #fff;
     padding: 10px 24px;
-    border-radius: 25px;
+    border-radius: 8px;
     text-decoration: none;
     font-size: 17px;
     font-weight: 600;
@@ -1476,6 +1484,12 @@ img {
     .banner-content h2 {
         font-size: 24px;
     }
+
+    .submit-btn, .reset-btn {
+        min-width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
 }
 
 /* ===== 页面通用样式（从内联样式合并） ===== */
@@ -1613,6 +1627,8 @@ img {
 }
 
 .contact-section .btn {
+    font-size: 17px;
+    border-radius: 8px;
     background: #c00;
     color: #ffffff;
     border: none;
@@ -1970,6 +1986,8 @@ img {
     
     /* 按钮好点击（最小 44x44px 触摸区域） */
     .btn {
+    font-size: 17px;
+    border-radius: 8px;
         min-height: 44px;
         min-width: 44px;
         font-size: 17px;
