@@ -256,3 +256,45 @@ function shareProduct(btn) {
         });
     }
 }
+
+// ===== 多平台社交分享功能 =====
+function shareToSocial(btn, platform) {
+    const card = btn.closest('.product-card');
+    const productTitle = card.querySelector('h3').textContent;
+    const productImg = card.querySelector('img').src;
+    const url = window.location.href.split('?')[0].split('#')[0];
+    const text = '查看产品：' + productTitle;
+    
+    let shareUrl = '';
+    
+    switch(platform) {
+        case 'facebook':
+            shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+            break;
+        case 'twitter':
+            shareUrl = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
+            break;
+        case 'linkedin':
+            shareUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+            break;
+        case 'pinterest':
+            shareUrl = 'https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(url) + '&media=' + encodeURIComponent(productImg) + '&description=' + encodeURIComponent(text);
+            break;
+        case 'whatsapp':
+            shareUrl = 'https://wa.me/?text=' + encodeURIComponent(text + ' ' + url);
+            break;
+        case 'line':
+            shareUrl = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(url);
+            break;
+        case 'tumblr':
+            shareUrl = 'https://www.tumblr.com/share/link?url=' + encodeURIComponent(url) + '&name=' + encodeURIComponent(productTitle) + '&description=' + encodeURIComponent(text);
+            break;
+    }
+    
+    if (shareUrl) {
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
+    
+    // 阻止默认跳转
+    return false;
+}
