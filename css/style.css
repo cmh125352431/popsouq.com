@@ -147,6 +147,7 @@ img {
 
 .nav ul {
     display: flex;
+    justify-content: center;
 }
 
 .nav ul li {
