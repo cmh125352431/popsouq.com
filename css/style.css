@@ -1360,16 +1360,18 @@ img {
 @media screen and (max-width: 768px) {
     .header .container {
         height: 60px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
     .nav {
     }
     .header-right {
-        gap: 8px;
+        gap: 6px;
+        flex-shrink: 0;
     }
     .lang-current {
-        padding: 4px 10px;
-        font-size: 14px;
+        padding: 3px 8px;
+        font-size: 13px;
+        gap: 4px;
     }
     .lang-arrow svg {
         width: 10px;
@@ -1378,7 +1380,12 @@ img {
         vertical-align: middle;
     }
     .whatsapp-link {
-        font-size: 14px;
+        font-size: 13px;
+        gap: 3px;
+    }
+    .whatsapp-link svg {
+        width: 16px;
+        height: 16px;
     }
 
     .nav {
