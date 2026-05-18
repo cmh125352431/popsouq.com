@@ -224,3 +224,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // 监听滚动事件
     window.addEventListener('scroll', toggleBackToTop);
 });
+
+// ===== 产品分享功能 =====
+function shareProduct(btn) {
+    const card = btn.closest('.product-card');
+    const productTitle = card.querySelector('h3').textContent;
+    const url = window.location.href.split('?')[0].split('#')[0];
+    
+    if (navigator.share) {
+        // 使用系统分享功能（移动端）
+        navigator.share({
+            title: productTitle,
+            text: '查看产品：' + productTitle,
+            url: url
+        }).catch(function(err) {
+            // 用户取消分享，不做任何处理
+        });
+    } else {
+        // 复制链接到剪贴板（桌面端）
+        navigator.clipboard.writeText(url).then(function() {
+            // 创建临时提示
+            const toast = document.createElement('div');
+            toast.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,0.8);color:#fff;padding:12px 24px;border-radius:8px;font-size:14px;z-index:9999;';
+            toast.textContent = '链接已复制到剪贴板';
+            document.body.appendChild(toast);
+            setTimeout(function() {
+                toast.remove();
+            }, 2000);
+        }).catch(function(err) {
+            alert('链接：' + url);
+        });
+    }
+}
