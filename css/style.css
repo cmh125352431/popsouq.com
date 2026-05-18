@@ -157,7 +157,7 @@ img {
 }
 
 .nav ul li {
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 .nav ul li a {
@@ -165,7 +165,7 @@ img {
     padding: 25px 0;
     display: block;
     transition: color 0.3s;
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 600;
 }
 
