@@ -143,10 +143,7 @@
                     <h2>在线留言</h2>
                     <p class="subtitle">填写下方表单，我们会尽快回复您</p>
                     
-                    <form action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="f89809a8-6eb3-4e1d-8479-3cec0d3c4e86">
-                        <input type="hidden" name="subject" value="新咨询来自 popsouq.com">
-                        <input type="checkbox" name="botcheck" style="display:none">
+                    <form id="contactForm">
                         
                         <div class="form-row">
                             <div class="form-group">
@@ -233,5 +230,26 @@
     </footer>
 
     <script src="js/main.js?v=3"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var company = document.getElementById('company').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var message = document.getElementById('message').value;
+            
+            var subject = encodeURIComponent('【popsouq.com】新咨询来自 ' + name);
+            var body = encodeURIComponent(
+                '姓名: ' + name + '\n' +
+                '公司: ' + (company || '未填写') + '\n' +
+                '邮箱: ' + email + '\n' +
+                '电话: ' + (phone || '未填写') + '\n\n' +
+                '留言内容:\n' + message
+            );
+            
+            window.location.href = 'mailto:qy125100@xmhungjin.com?subject=' + subject + '&body=' + body;
+        });
+    </script>
 </body>
 </html>
