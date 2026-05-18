@@ -3,25 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <meta http-equiv="Cache-Control" content="max-age=86400">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="联系厦门泓劲贸易有限公司 - 获取面料报价、样品索取、合作咨询">
     <title>联系我们 | 厦门泓劲贸易有限公司</title>
-    <link rel="stylesheet" href="css/style.min.css?v=45">
+    <link rel="stylesheet" href="css/style.min.css?v=53">
     <link rel="canonical" href="https://popsouq.com/contact.html">
+    
+    <!-- Hreflang for multilingual -->
+    <link rel="alternate" hreflang="zh-CN" href="https://popsouq.com/contact.html">
+    <link rel="alternate" hreflang="en" href="https://popsouq.com/contact-en.html">
+    <link rel="alternate" hreflang="x-default" href="https://popsouq.com/contact.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://popsouq.com/contact.html">
     <meta property="og:title" content="联系我们 | 厦门泓劲贸易有限公司">
     <meta property="og:description" content="联系厦门泓劲贸易有限公司，电话0592-5986779">
-    <meta property="og:image" content="https://popsouq.com/images/logo.svg">
+    <meta property="og:image" content="https://popsouq.com/images/logo.png">
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "name": "联系我们 - 厦门泓劲贸易",
-      "url": "https://popsouq.com/contact.html",
-      "inLanguage": "zh-CN"
+      "@graph": [
+        {
+          "@type": "ContactPage",
+          "name": "联系我们 - 厦门泓劲贸易",
+          "url": "https://popsouq.com/contact.html",
+          "inLanguage": "zh-CN",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "厦门泓劲贸易有限公司",
+            "telephone": "+86-592-5986779",
+            "email": "qy125100@xmhungjin.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "洪莲东二里25号万科金域蓝湾5B栋2401",
+              "addressLocality": "厦门市",
+              "addressRegion": "福建省",
+              "addressCountry": "CN"
+            }
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "厦门泓劲贸易有限公司",
+          "url": "https://popsouq.com/",
+          "logo": "https://popsouq.com/images/logo.png",
+          "telephone": "+86-592-5986779",
+          "email": "qy125100@xmhungjin.com"
+        }
+      ]
     }
     </script>
 </head>
@@ -36,12 +67,11 @@
             <nav class="nav">
                 <ul>
                     <li><a href="index.html">首页</a></li>
-                    <li><a href="products.html">产品介绍</a></li>
                     <li><a href="about.html">关于我们</a></li>
-                    <li><a href="news.html">新闻动态</a></li>
+                    <li><a href="products.html">产品介绍</a></li>
+                    <li><a href="knowledge.html">产品知识</a></li>
                     <li class="active"><a href="contact.html">联系我们</a></li>
-                </ul>
-            </nav>
+                
             <div class="header-right">
                 <div class="lang-switch"><div class="lang-dropdown" id="langDropdown"><span class="lang-current">中文 <span class="lang-arrow">▼</span></span><div class="lang-menu"><a href="#" data-lang="zh" class="lang-option active">中文</a><a href="#" data-lang="en" class="lang-option">English</a></div></div></div>
                 <a href="https://wa.me/5215510217089" class="whatsapp-link" target="_blank" rel="noopener noreferrer">
@@ -120,33 +150,35 @@
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label>您的姓名 *</label>
-                                <input type="text" name="name" placeholder="请输入姓名" required>
+                                <label for="name">您的姓名 *</label>
+                                <input id="name" type="text" name="name" placeholder="请输入姓名" required>
                             </div>
                             <div class="form-group">
-                                <label>公司名称</label>
-                                <input type="text" name="company" placeholder="请输入公司名称">
+                                <label for="company">公司名称</label>
+                                <input id="company" type="text" name="company" placeholder="请输入公司名称">
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label>电子邮箱 *</label>
-                                <input type="email" name="email" placeholder="请输入邮箱" required>
+                                <label for="email">电子邮箱 *</label>
+                                <input id="email" type="email" name="email" placeholder="请输入邮箱" required>
                             </div>
                             <div class="form-group">
-                                <label>联系电话</label>
-                                <input type="tel" name="phone" placeholder="请输入电话">
+                                <label for="phone">联系电话</label>
+                                <input id="phone" type="tel" name="phone" placeholder="请输入电话">
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            <label>留言内容 *</label>
-                            <textarea name="message" placeholder="请输入您的留言内容..." required></textarea>
+                            <label for="message">留言内容 *</label>
+                            <textarea id="message" name="message" placeholder="请输入您的留言内容..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="submit-btn">提交留言</button>
-                        <button type="reset" class="reset-btn">重置</button>
+                        <div class="form-buttons">
+                            <button type="submit" class="submit-btn">提交留言</button>
+                            <button type="reset" class="reset-btn">重置</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -186,7 +218,7 @@
                     <a href="index.html">首页</a>
                     <a href="products.html">产品介绍</a>
                     <a href="about.html">关于我们</a>
-                    <a href="news.html">新闻动态</a>
+                    <a href="knowledge.html">产品知识</a>
                     <a href="contact.html">联系我们</a>
                 </div>
                 <div class="footer-contact">

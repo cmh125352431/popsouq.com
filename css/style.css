@@ -950,9 +950,20 @@ img {
     min-height: 120px;
 }
 
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
 .submit-btn, .reset-btn {
     min-width: 140px;
     text-align: center;
+    flex: 1;
+    max-width: 200px;
 }
 
 .submit-btn {
@@ -981,7 +992,6 @@ img {
     cursor: pointer;
     transition: all 0.2s;
     font-weight: 500;
-    margin-left: 12px;
 }
 
 .reset-btn:hover {
@@ -1485,10 +1495,14 @@ img {
         font-size: 24px;
     }
 
+    .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
     .submit-btn, .reset-btn {
         min-width: 100%;
-        margin-left: 0;
-        margin-bottom: 10px;
+        max-width: 100%;
     }
 }
 
@@ -2000,6 +2014,12 @@ img {
         padding: 12px 30px;
     }
     
+    .reset-btn {
+        min-height: 44px;
+        font-size: 17px;
+        padding: 12px 30px;
+    }
+    
     /* 不横滑 */
     body {
         overflow-x: hidden;
@@ -2203,10 +2223,7 @@ img {
     .certificate-info p {
         font-size: 17px;
     }
-}
-
-/* 响应式 - 手机 */
-@media screen and (max-width: 480px) {
+    
     .gallery-grid {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -2215,17 +2232,16 @@ img {
     .gallery-caption {
         font-size: 17px;
     }
-    
-    .certificates-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .certificate-img {
-        min-height: 200px;
-    }
-    
-    .certificate-img img {
-        max-height: 180px;
+}
+
+/* ===== 无障碍：减少动画偏好 ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

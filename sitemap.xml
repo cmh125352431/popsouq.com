@@ -34,12 +34,12 @@
   
   <!-- 新闻动态 -->
   <url>
-    <loc>https://popsouq.com/news.html</loc>
+    <loc>https://popsouq.com/knowledge.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://popsouq.com/news.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://popsouq.com/news-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://popsouq.com/knowledge.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://popsouq.com/knowledge-en.html"/>
   </url>
   
   <!-- 联系我们 -->

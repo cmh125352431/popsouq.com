@@ -154,6 +154,17 @@ if (contactForm) {
     });
 }
 
+// ===== 轮播图点击跳转（事件委托） =====
+document.addEventListener('click', function(e) {
+    const carouselItem = e.target.closest('.carousel-item[data-href]');
+    if (carouselItem) {
+        const href = carouselItem.getAttribute('data-href');
+        if (href) {
+            window.location.href = href;
+        }
+    }
+});
+
 // ===== 平滑滚动 =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
