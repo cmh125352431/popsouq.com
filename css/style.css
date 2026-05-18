@@ -1411,10 +1411,11 @@ img {
     }
 
     .nav ul li a {
-        padding: 12px 0;
+        padding: 10px 0;
         display: block;
         border-bottom: 1px solid rgba(255,255,255,0.1);
-        font-size: 22px;
+        font-size: 18px;
+        line-height: 1.4;
     }
 
     .header-right {
