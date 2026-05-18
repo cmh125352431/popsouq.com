@@ -1371,6 +1371,12 @@ img {
         padding: 4px 10px;
         font-size: 14px;
     }
+    .lang-arrow svg {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        vertical-align: middle;
+    }
     .whatsapp-link {
         font-size: 14px;
     }
