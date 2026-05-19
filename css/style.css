@@ -864,11 +864,15 @@ img {
     margin-bottom: 4px;
     font-weight: 500;
 }
-
 .info-content p {
     font-size: 17px;
     color: #333;
     line-height: 1.6;
+}
+
+.info-content p a {
+    color: inherit;
+    text-decoration: none;
 }
 
 /* info-item 默认深色文字（用于 contact.html 等浅色背景页面） */
