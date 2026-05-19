@@ -2713,7 +2713,7 @@ html {
     border-radius: 6px;
     min-width: 180px;
     height: 48px;
-    line-height: 1.4;
+    line-height: 48px;
     text-align: center;
     word-break: break-word;
     box-sizing: border-box;
