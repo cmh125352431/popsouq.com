@@ -38,6 +38,13 @@
     </script>
 </head>
 <body>
+    <!-- iOS "添加到主屏幕" 提示 -->
+    <div id="ios-install-banner" style="display:none; position:fixed; top:0; left:0; right:0; z-index:999999; background:#1a1a2e; color:#fff; padding:12px 16px; font-size:14px; line-height:1.5; box-shadow:0 2px 10px rgba(0,0,0,0.3);">
+        <div style="max-width:600px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px;">
+            <div style="flex:1;"><strong>iOS 提示：</strong>点击 <strong style="color:#f0d9a0;">Safari 分享按钮</strong> → <strong style="color:#f0d9a0;">添加到主屏幕</strong>，可把网站添加到桌面使用</div>
+            <button onclick="dismissIosBanner()" style="background:transparent; border:none; color:#fff; font-size:20px; cursor:pointer; padding:0 5px; line-height:1;">×</button>
+        </div>
+    </div>
     <!-- Header -->
     <header class="header">
         <div class="container">
