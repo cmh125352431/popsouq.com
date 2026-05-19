@@ -575,10 +575,18 @@ img {
 }
 
 .hotline .label {
-    display: block;
+    display: inline-block;
     font-size: 17px;
     margin-bottom: 10px;
     opacity: 0.8;
+    vertical-align: middle;
+}
+
+.phone-icon {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    margin-right: 6px;
 }
 
 .hotline .number {
