@@ -603,7 +603,7 @@ img {
 .hotline .number {
     font-size: 30px;
     font-weight: bold;
-    color: var(--primary-color);
+    color: #ffffff;
     white-space: nowrap;
 }
 
