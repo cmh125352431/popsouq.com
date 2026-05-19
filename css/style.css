@@ -2438,3 +2438,52 @@ img {
     min-width: 90px !important;
     text-align: center;
 }
+
+/* 文章上一篇/下一篇导航 */
+.article-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    margin-top: 40px;
+    border-top: 1px solid #e0e0e0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.article-nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+    max-width: 45%;
+    word-break: break-word;
+}
+
+.article-nav a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.nav-prev {
+    text-align: left;
+}
+
+.nav-next {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .article-nav {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .article-nav a {
+        max-width: 100%;
+        text-align: center !important;
+    }
+}
