@@ -2413,3 +2413,22 @@ img {
         height: 200px;
     }
 }
+
+/* 联系页面地图链接按钮 - 强制同一行 */
+.map-links {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 5px;
+}
+.map-links::-webkit-scrollbar {
+    display: none;
+}
+.map-links a {
+    flex-shrink: 0;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    white-space: nowrap;
+}
