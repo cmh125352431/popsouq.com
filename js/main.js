@@ -286,9 +286,6 @@ function shareToSocial(btn, platform) {
         case 'line':
             shareUrl = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(url);
             break;
-        case 'tumblr':
-            shareUrl = 'https://www.tumblr.com/share/link?url=' + encodeURIComponent(url) + '&name=' + encodeURIComponent(productTitle) + '&description=' + encodeURIComponent(text);
-            break;
     }
     
     if (shareUrl) {
