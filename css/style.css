@@ -586,8 +586,9 @@ img {
 }
 
 .hotline .label {
-    font-size: 17px;
-    opacity: 0.8;
+    font-size: 20px;
+    opacity: 0.9;
+    font-weight: 500;
 }
 
 .phone-icon {
@@ -601,10 +602,11 @@ img {
 }
 
 .hotline .number {
-    font-size: 30px;
+    font-size: 36px;
     font-weight: bold;
     color: var(--primary-color);
     white-space: nowrap;
+    letter-spacing: 1px;
 }
 
 .view-more {
@@ -1636,8 +1638,12 @@ img {
         font-size: 15px;
     }
 
-    .hotline .number {
+    .hotline .label {
         font-size: 18px;
+    }
+    
+    .hotline .number {
+        font-size: 22px;
         color: var(--primary-color);
         white-space: nowrap;
     }
