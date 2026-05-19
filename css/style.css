@@ -603,7 +603,7 @@ img {
 .hotline .number {
     font-size: 30px;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--primary-color);
     white-space: nowrap;
 }
 
@@ -1638,6 +1638,7 @@ img {
 
     .hotline .number {
         font-size: 18px;
+        color: var(--primary-color);
         white-space: nowrap;
     }
 
