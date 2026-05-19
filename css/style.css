@@ -2453,48 +2453,54 @@ img {
 /* 文章上一篇/下一篇导航 */
 .article-nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 0;
-    margin-top: 40px;
-    border-top: 1px solid #e0e0e0;
+    justify-content: center;
+    align-items: stretch;
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-top: 2px solid #e8e8e8;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    gap: 15px;
 }
 
 .article-nav a {
-    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: var(--primary-color);
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
-    transition: color 0.3s;
-    max-width: 45%;
+    transition: all 0.3s;
+    padding: 12px 24px;
+    border-radius: 6px;
+    flex: 1;
+    text-align: center;
     word-break: break-word;
 }
 
 .article-nav a:hover {
-    color: var(--primary-dark);
-    text-decoration: underline;
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(192,0,0,0.25);
+    text-decoration: none;
 }
 
-.nav-prev {
-    text-align: left;
-}
-
-.nav-next {
-    text-align: right;
-}
+.nav-prev { text-align: left; }
+.nav-next { text-align: right; }
 
 @media (max-width: 768px) {
     .article-nav {
         flex-direction: column;
-        gap: 15px;
-        align-items: stretch;
+        gap: 12px;
+        padding: 20px 15px;
     }
-    
     .article-nav a {
-        max-width: 100%;
+        width: 100%;
         text-align: center !important;
+        padding: 14px 20px;
+        font-size: 13px;
     }
 }
