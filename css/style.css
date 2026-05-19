@@ -2687,6 +2687,14 @@ html {
 }
 
 /* 文章上一篇/下一篇导航 */
+.article-nav-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    background: #f8f8f8;
+}
+
 .article-nav {
     display: flex;
     justify-content: center;
