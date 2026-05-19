@@ -2691,7 +2691,8 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 300px;
+    min-height: 120px;
+    padding: 20px 0;
     background: #f8f8f8;
 }
 
