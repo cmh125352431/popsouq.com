@@ -2382,3 +2382,30 @@ img {
     color: #666;
     line-height: 1.6;
 }
+
+/* 服装成品网格 - 手机端适配 */
+.garments-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .garments-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .garment-placeholder {
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .garments-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .garment-placeholder {
+        height: 200px;
+    }
+}
