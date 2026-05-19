@@ -6,6 +6,10 @@
     touch-action: manipulation;
 }
 
+html {
+    background-color: var(--nav-bg);
+}
+
 :root {
     --primary-color: #c00;
     --primary-hover: #a00;
