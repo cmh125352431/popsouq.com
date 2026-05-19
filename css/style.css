@@ -2660,7 +2660,7 @@ html {
 .article-nav {
     display: flex;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     padding: 15px 20px;
     margin-top: 0;
     max-width: 800px;
@@ -2681,7 +2681,8 @@ html {
     transition: all 0.3s;
     padding: 12px 24px;
     border-radius: 6px;
-    flex: 1;
+    min-width: 180px;
+    min-height: 48px;
     text-align: center;
     word-break: break-word;
 }
@@ -2693,8 +2694,8 @@ html {
     text-decoration: none;
 }
 
-.nav-prev { text-align: left; }
-.nav-next { text-align: right; }
+.nav-prev { text-align: center; }
+.nav-next { text-align: center; }
 
 @media (max-width: 768px) {
     .article-nav {
@@ -2704,6 +2705,8 @@ html {
     }
     .article-nav a {
         width: 100%;
+        min-width: unset;
+        min-height: 48px;
         text-align: center !important;
         padding: 14px 20px;
         font-size: 13px;
