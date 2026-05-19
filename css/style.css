@@ -1718,8 +1718,8 @@ img {
 .page-header p { display: none; }
 .breadcrumb {
     background: #f5f5f5;
-    padding: 10px 0;
-    font-size: 14px;
+    padding: 12px 0;
+    font-size: 16px;
     color: #666;
 }
 .breadcrumb a { color: #333; }
