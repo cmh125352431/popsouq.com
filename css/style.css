@@ -578,18 +578,26 @@ img {
     color: var(--bg-white);
 }
 
+.hotline-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
 .hotline .label {
-    display: inline-block;
     font-size: 17px;
     opacity: 0.8;
-    vertical-align: middle;
 }
 
 .phone-icon {
     height: 24px;
     width: auto;
-    vertical-align: middle;
     margin-right: 6px;
+}
+
+.hotline-number {
+    text-align: center;
 }
 
 .hotline .number {
