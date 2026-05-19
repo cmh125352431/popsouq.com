@@ -691,6 +691,130 @@ img {
     line-height: 1.6;
 }
 
+/* ===== 产品知识列表页（news-article 布局）==== */
+.news-list-page {
+    padding: 40px 0;
+}
+
+.news-article {
+    display: flex;
+    gap: 25px;
+    padding: 25px 30px;
+    background: var(--bg-white);
+    border-radius: 8px;
+    border: 1px solid #e8e8e8;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.news-article:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.news-article-date {
+    flex-shrink: 0;
+    width: 70px;
+    text-align: center;
+    padding: 12px 8px;
+    background: linear-gradient(135deg, var(--primary-color), #1a8ccc);
+    border-radius: 8px;
+    color: #fff;
+    height: fit-content;
+}
+
+.date-day {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.date-month {
+    display: block;
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 2px;
+}
+
+.news-article-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.news-article-content h3 {
+    font-size: 19px;
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+}
+
+.news-article-content h3 a {
+    color: var(--text-dark);
+    transition: color 0.2s;
+}
+
+.news-article-content h3 a:hover {
+    color: var(--primary-color);
+}
+
+.news-article-content p {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0 0 12px 0;
+}
+
+.news-article-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: #999;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.news-article-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .news-article {
+        gap: 15px;
+        padding: 18px;
+        margin-bottom: 15px;
+    }
+
+    .news-article-date {
+        width: 56px;
+        padding: 10px 6px;
+    }
+
+    .date-day {
+        font-size: 22px;
+    }
+
+    .date-month {
+        font-size: 11px;
+    }
+
+    .news-article-content h3 {
+        font-size: 17px;
+    }
+
+    .news-article-content p {
+        font-size: 14px;
+    }
+
+    .news-article-meta {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
 /* ===== 新闻动态 + 关于我们 ===== */
 /* [已合并至上方 .news-about/.news-item/.news-date 定义，此处删除重复] */
 
