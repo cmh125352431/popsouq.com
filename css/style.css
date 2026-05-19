@@ -693,7 +693,7 @@ img {
 
 /* ===== 产品知识列表页（news-article 布局）==== */
 .news-list-page {
-    padding: 40px 0;
+    padding: 20px 0;
 }
 
 .news-article {
@@ -1718,8 +1718,8 @@ img {
 .page-header p { display: none; }
 .breadcrumb {
     background: #f5f5f5;
-    padding: 15px 0;
-    font-size: 17px;
+    padding: 10px 0;
+    font-size: 14px;
     color: #666;
 }
 .breadcrumb a { color: #333; }
@@ -1879,7 +1879,7 @@ img {
 /* [已合并至上方 .form-group 定义，此处删除重复] */
 
 /* 新闻页面 */
-.news-list-page { padding: 60px 0; }
+.news-list-page { padding: 20px 0; }
 /* [已删除死代码: .news-grid/.news-card — 新闻页面使用 .news-article] */
 
 /* 响应式补充 */
