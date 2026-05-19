@@ -2428,7 +2428,9 @@ img {
 }
 .map-links a {
     flex-shrink: 0;
-    padding: 6px 10px !important;
-    font-size: 12px !important;
+    padding: 8px 12px !important;
+    font-size: 13px !important;
     white-space: nowrap;
+    min-width: 90px !important;
+    text-align: center;
 }
