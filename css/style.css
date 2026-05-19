@@ -1618,6 +1618,33 @@ img {
     .welcome .container {
         flex-direction: column;
         text-align: center;
+        gap: 30px;
+    }
+
+    .welcome-content h2 {
+        font-size: 22px;
+    }
+
+    .hotline {
+        padding: 20px 25px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .hotline .label {
+        font-size: 15px;
+    }
+
+    .hotline .number {
+        font-size: 22px;
+    }
+
+    .phone-icon {
+        height: 20px;
+    }
+
+    .hotline-label {
+        margin-bottom: 8px;
     }
 
     .product-list {
