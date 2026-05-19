@@ -2344,20 +2344,20 @@ img {
     height: 16px;
 }
 
-/* 移动端适配 */
+/* 移动端适配 - 增大图标尺寸方便老年人点击 */
 @media (max-width: 768px) {
     .product-share-icons {
-        gap: 6px;
+        gap: 12px;
     }
     
     .product-share-icons a {
-        width: 28px;
-        height: 28px;
+        width: 44px;
+        height: 44px;
     }
     
     .product-share-icons svg {
-        width: 14px;
-        height: 14px;
+        width: 22px;
+        height: 22px;
     }
 }
 
