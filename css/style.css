@@ -2316,8 +2316,9 @@ img {
 .product-share-icons {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 8px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-top: 12px;
     padding-top: 12px;
     border-top: 1px solid #eee;
@@ -2347,8 +2348,11 @@ img {
 /* 移动端适配 - 增大图标尺寸方便老年人点击 */
 @media (max-width: 768px) {
     .product-share-icons {
-        gap: 12px;
+        gap: 6px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
+    .product-share-icons::-webkit-scrollbar { display: none; }
     
     .product-share-icons a {
         width: 48px;

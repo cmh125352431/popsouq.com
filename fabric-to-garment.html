@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>面料 → 成衣 | 厦门泓劲贸易</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background:#f8f6f3; color:#1a1a1a; }
+
+/* ===== Hero 区域 ===== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #2d5a7b 100%);
+}
+
+/* 背景纹理 */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset:0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255,215,0,0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(200,220,240,0.06) 0%, transparent 35%);
+}
+
+/* 主容器 */
+.hero-container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1200px;
+    padding: 60px 0;
+}
+
+/* 标题区 */
+.hero-title-section {
+    text-align: center;
+    margin-bottom: 70px;
+}
+.hero-badge {
+    display: inline-block;
+    padding: 8px 24px;
+    border: 1px solid rgba(212,175,55,0.4);
+    border-radius: 30px;
+    color: #d4af37;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    backdrop-filter: blur(10px);
+}
+.hero-title {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+.hero-title .highlight {
+    background: linear-gradient(135deg, #d4af37, #f4d03f, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.hero-subtitle {
+    font-size: clamp(16px, 2vw, 20px);
+    color: rgba(255,255,255,0.65);
+    margin-top: 18px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+/* ===== 核心视觉：面料 → 成衣 流程展示 ===== */
+.flow-showcase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+/* 面料卡片 */
+.fabric-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 420px;
+    aspect-ratio: 4/5;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(10px);
+    transition: transform 0.5s ease;
+}
+.fabric-card:hover { transform: translateY(-8px); }
+
+/* 面料纹理模拟 */
+.fabric-visual {
+    height: 75%;
+    position: relative;
+    overflow: hidden;
+    /* 模拟面料纹理 */
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255,255,255,0.02) 10px,
+            rgba(255,255,255,0.02) 20px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 10px,
+            rgba(255,255,255,0.01) 10px,
+            rgba(255,255,255,0.01) 20px
+        );
+    background-color: #c9b896;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* 面料编织纹理 */
+.fabric-texture {
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(0,0,0,0.05) 8px, rgba(0,0,0,0.05) 9px),
+        repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(0,0,0,0.04) 8px, rgba(0,0,0,0.04) 9px);
+}
+.fabric-label-overlay {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(12px);
+    padding: 10px 26px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* 面料信息 */
+.fabric-info {
+    padding: 22px 26px;
+    color: #fff;
+}
+.fabric-info h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #d4af37;
+}
+.fabric-info p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+}
+.fabric-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+.fabric-tag {
+    padding: 4px 12px;
+    background: rgba(212,175,55,0.12);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 15px;
+    font-size: 11px;
+    color: #d4af37;
+}
+
+/* ===== 箭头连接器 ===== */
+.flow-arrow {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+.arrow-line {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #d4af37, #f4d03f);
+    border-radius: 2px;
+    position: relative;
+    animation: arrowPulse 2s ease-in-out infinite;
+}
+@keyframes arrowPulse {
+    0%, 100% { opacity: 0.6; transform: scaleX(1); }
+    50% { opacity: 1; transform: scaleX(1.05); }
+}
+.arrow-head {
+    width: 0;
+    height: 0;
+    border-left: 14px solid #f4d03f;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    margin-left: 2px;
+}
+.arrow-label {
+    margin-top: 12px;
+    font-size: 11px;
+    color: rgba(212,175,55,0.8);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* ===== 成衣卡片 ===== */
+.garment-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 420px;
+    aspect-ratio: 4/5;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(10px);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.garment-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(212,175,55,0.15);
+}
+
+/* 成衣展示区 */
+.garment-visual {
+    height: 75%;
+    position: relative;
+    background: linear-gradient(180deg, #e8dcc8 0%, #d4c4a8 50%, #c9b896 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+/* 衣服轮廓 SVG */
+.garment-silhouette {
+    width: 65%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.15));
+}
+.garment-label-overlay {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #d4af37, #c49b2e);
+    padding: 10px 26px;
+    border-radius: 30px;
+    color: #0a1628;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+/* 成衣信息 */
+.garment-info {
+    padding: 22px 26px;
+    color: #fff;
+}
+.garment-info h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #f4d03f;
+}
+.garment-info p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+}
+.garment-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+.garment-tag {
+    padding: 4px 12px;
+    background: rgba(244,208,63,0.12);
+    border: 1px solid rgba(244,208,63,0.25);
+    border-radius: 15px;
+    font-size: 11px;
+    color: #f4d03f;
+}
+
+/* ===== 底部数据条 ===== */
+.stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 70px;
+    flex-wrap: wrap;
+}
+.stat-item {
+    text-align: center;
+}
+.stat-number {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    color: #d4af37;
+    line-height: 1;
+}
+.stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 6px;
+    letter-spacing: 1px;
+}
+
+/* ===== CTA 按钮 ===== */
+.cta-section {
+    text-align: center;
+    margin-top: 60px;
+}
+.cta-btn {
+    display: inline-block;
+    padding: 16px 44px;
+    background: linear-gradient(135deg, #d4af37, #c49b2e);
+    color: #0a1628;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 35px rgba(212,175,55,0.35);
+}
+
+/* ===== 移动端适配 ===== */
+@media (max-width: 900px) {
+    .flow-showcase {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .flow-arrow {
+        transform: rotate(90deg);
+        padding: 10px 0;
+    }
+    .arrow-label {
+        transform: rotate(-90deg) translateX(15px);
+        margin-top: 0;
+        margin-left: -10px;
+    }
+    .stats-bar { gap: 30px; }
+}
+@media (max-width: 480px) {
+    .hero-container { padding: 30px 0; }
+    .hero-title-section { margin-bottom: 40px; }
+    .fabric-card, .garment-card { max-width: 100%; }
+    .stat-item { min-width: 80px; }
+}
+</style>
+</head>
+<body>
+<section class="hero">
+<div class="hero-container">
+
+<!-- 标题 -->
+<div class="hero-title-section">
+    <div class="hero-badge">Core Advantage</div>
+    <h1 class="hero-title">从<span class="highlight">一缕纱线</span><br>到<span class="highlight">一件成衣</span></h1>
+    <p class="hero-subtitle">我们不只是卖面料，也不只是做服装。<br>从源头精选面料，到成品精准交付，全链路把控品质。</p>
+</div>
+
+<!-- 核心：面料 → 成衣 视觉流程 -->
+<div class="flow-showcase">
+
+    <!-- 左侧：面料 -->
+    <div class="fabric-card">
+        <div class="fabric-visual">
+            <div class="fabric-texture"></div>
+            <div class="fabric-label-overlay">🧵 源头面料</div>
+        </div>
+        <div class="fabric-info">
+            <h3>Fabric Sourcing</h3>
+            <p>全球优质供应商直采，涵盖针织、梭织、功能性面料等全品类</p>
+            <div class="fabric-tags">
+                <span class="fabric-tag">吸湿排汗</span>
+                <span class="fabric-tag">抗菌防臭</span>
+                <span class="fabric-tag">环保再生</span>
+                <span class="fabric-tag">速干透气</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 中间：箭头连接 -->
+    <div class="flow-arrow">
+        <div class="arrow-line"></div>
+        <div class="arrow-head"></div>
+        <div class="arrow-label">Transform</div>
+    </div>
+
+    <!-- 右侧：成衣 -->
+    <div class="garment-card">
+        <div class="garment-visual">
+            <!-- T恤轮廓 SVG -->
+            <svg class="garment-silhouette" viewBox="0 0 120 140" fill="none">
+                <!-- 简洁T恤剪影 -->
+                <path d="M30 35 L15 50 L25 58 L30 52 L30 125 L90 125 L90 52 L95 58 L105 50 L90 35 L75 42 Q60 36 45 42 Z" 
+                      fill="#2d5a7b" stroke="#1a3a5c" stroke-width="1.5"/>
+                <!-- 衣领 -->
+                <path d="M45 42 Q52 38 60 38 Q68 38 75 42" fill="none" stroke="#1a3a5c" stroke-width="1.5"/>
+                <!-- 下摆弧线 -->
+                <path d="M30 115 Q60 122 90 115" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                <!-- 品牌标位置示意 -->
+                <circle cx="60" cy="78" r="10" fill="rgba(212,175,55,0.25)" stroke="#d4af37" stroke-width="0.8"/>
+                <text x="60" y="82" text-anchor="middle" fill="#d4af37" font-size="8" font-weight="bold">LOGO</text>
+            </svg>
+            <div class="garment-label-overlay">👕 精品成衣</div>
+        </div>
+        <div class="garment-info">
+            <h3>Garment Production</h3>
+            <p>自有合作工厂，从打样到大货，严格质检，按期交付全球客户</p>
+            <div class="garment-tags">
+                <span class="garment-tag">泳装</span>
+                <span class="garment-tag">运动服</span>
+                <span class="garment-tag">瑜伽服</span>
+                <span class="garment-tag">健身服</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- 数据亮点 -->
+<div class="stats-bar">
+    <div class="stat-item">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">面料 SKU</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">年行业经验</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">准时交付率</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">30+</div>
+        <div class="stat-label">出口国家</div>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+    <a href="contact.html" class="cta-btn">了解我们的完整供应链 →</a>
+</div>
+
+</div>
+</section>
+</body>
+</html>
