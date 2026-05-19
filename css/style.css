@@ -2174,8 +2174,8 @@ img {
         }
 
 /* ===== 知识详情页面 ===== */
-.knowledge-page { padding: 60px 0; }
-.knowledge-article { background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.knowledge-page { padding: 20px 0; }
+.knowledge-article { background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
 .knowledge-article h1 { font-size: 30px; color: #333; margin-bottom: 15px; }
 .article-meta { font-size: 17px; color: #999; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
 .article-meta span { margin-right: 20px; }
