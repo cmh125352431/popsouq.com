@@ -583,8 +583,8 @@ img {
 }
 
 .phone-icon {
-    width: 28px;
-    height: 28px;
+    width: auto;
+    height: 26px;
     vertical-align: middle;
     margin-right: 6px;
 }
