@@ -2565,7 +2565,9 @@ img {
     justify-content: center;
     width: 48px;
     height: 48px;
-    border-radius: 50%;
+    max-width: 48px;
+    max-height: 48px;
+    border-radius: 50% !important;
     background: #f5f5f5;
     transition: all 0.3s ease;
 }
