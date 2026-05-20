@@ -911,6 +911,7 @@ img {
     padding: 80px 0;
     background: #ffffff;
     color: #333333;
+    overflow-x: hidden;
 }
 
 .contact-section .section-header {
