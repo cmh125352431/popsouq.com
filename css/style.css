@@ -606,7 +606,7 @@ img {
     font-weight: 700;
     color: #fff;
     white-space: nowrap;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
 }
 
 .view-more {
@@ -1642,6 +1642,7 @@ img {
         font-size: 26px;
         color: #fff;
         white-space: nowrap;
+        letter-spacing: 2px;
     }
 
     .phone-icon {
