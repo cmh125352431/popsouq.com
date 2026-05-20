@@ -2578,6 +2578,7 @@ img {
 .product-share-icons svg {
     width: 20px;
     height: 20px;
+    vertical-align: middle;
 }
 
 /* 移动端适配 - 增大图标尺寸方便老年人点击 */
