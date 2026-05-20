@@ -587,7 +587,7 @@ img {
 }
 
 .hotline .label {
-    font-size: 20px;
+    font-size: 22px;
     opacity: 0.9;
     letter-spacing: 4px;
 }
@@ -602,7 +602,7 @@ img {
 }
 
 .hotline .number {
-    font-size: 42px;
+    font-size: 30px;
     font-weight: 700;
     color: #fff;
     white-space: nowrap;
