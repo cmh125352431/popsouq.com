@@ -911,7 +911,6 @@ img {
     padding: 80px 0;
     background: #ffffff;
     color: #333333;
-    overflow-x: hidden;
 }
 
 .contact-section .section-header {
@@ -945,6 +944,8 @@ img {
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: stretch;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* 联系页面布局 */
@@ -1674,6 +1675,11 @@ img {
 
     .contact-wrapper {
         grid-template-columns: 1fr;
+    }
+
+    .contact-info-box,
+    .contact-form-box {
+        padding: 24px 20px;
     }
 
     .footer-content {
