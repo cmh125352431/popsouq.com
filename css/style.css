@@ -2589,6 +2589,18 @@ img {
     .product-share-icons {
         gap: 6px;
     }
+    .product-share-icons a {
+        width: 44px !important;
+        height: 44px !important;
+        max-width: 44px;
+        max-height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    .product-share-icons svg {
+        width: 24px;
+        height: 24px;
+    }
 }
 
 /* ===== 服装成品占位图标 ===== */
