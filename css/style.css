@@ -572,7 +572,7 @@ img {
 
 .hotline {
     text-align: center;
-    padding: 30px 40px;
+    padding: 24px 40px;
     background-color: var(--nav-bg);
     border-radius: 10px;
     color: var(--bg-white);
@@ -582,19 +582,19 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 12px;
+    gap: 6px;
+    margin-bottom: 6px;
 }
 
 .hotline .label {
-    font-size: 20px;
-    opacity: 0.9;
-    font-weight: 500;
+    font-size: 18px;
+    opacity: 0.85;
+    letter-spacing: 2px;
 }
 
 .phone-icon {
-    height: 24px;
+    height: 20px;
     width: auto;
-    margin-right: 6px;
 }
 
 .hotline-number {
@@ -602,11 +602,11 @@ img {
 }
 
 .hotline .number {
-    font-size: 36px;
-    font-weight: bold;
-    color: var(--primary-color);
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
     white-space: nowrap;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
 }
 
 .view-more {
