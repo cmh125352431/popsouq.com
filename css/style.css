@@ -1635,25 +1635,21 @@ img {
     }
 
     .hotline .label {
-        font-size: 15px;
-    }
-
-    .hotline .label {
         font-size: 18px;
     }
     
     .hotline .number {
-        font-size: 30px;
+        font-size: 26px;
         color: #fff;
         white-space: nowrap;
     }
 
     .phone-icon {
-        height: 20px;
+        height: 18px;
     }
 
     .hotline-label {
-        margin-bottom: 8px;
+        margin-bottom: 4px;
     }
 
     .product-list {
